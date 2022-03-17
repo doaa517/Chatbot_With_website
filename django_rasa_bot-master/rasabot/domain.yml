@@ -49,6 +49,7 @@ entities:
   - company
   - language
   - product
+  - password
 
 slots:
   username:
@@ -56,8 +57,15 @@ slots:
     type: text
     mappings:
     - type: custom
+  password:
+    type: text
+    influence_conversation: false
   
-
+  is_authenticated:
+    type: bool
+    initial_value: false
+    mappings:
+      - type: custom
 
 # slots:
 #   username:
@@ -304,10 +312,30 @@ responses:
   - text: "Damascus: +963 112153360 / +963112066 \
       \ Latakia: 2566411-041 / 2593412-041"
 
+  utter_authenticated_successfully:
+  - text: Thank {username} for providing information, I have authenticated you sucessfully.
+
+  utter_authentication_failure:
+  - text: Sorry, I wasn't able to authenticate you. Please check if your provided information is correct or not.
+
+  utter_authentication_required:
+  - text: Login required.
+
 
 actions:
 - action_save_name
 - query_degree
+- action_authenticated
+
+forms:
+  auth_form:
+    username:
+    - type: from_entity
+      entity: username
+    password:
+    - type: from_entity
+      entity: password
+
 
 session_config:
   carry_over_slots_to_new_session: true

@@ -1046,3 +1046,12 @@ nlu:
     - What is my degree in [machine learning](course_name)
 
 
+
+- intent: authentication
+  examples: |
+    - can you please make me login
+    - how do I login?
+    - can you autheticate my account
+    - login
+    - authenticate
+    - log me in

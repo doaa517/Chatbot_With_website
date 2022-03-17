@@ -3,6 +3,7 @@ from typing import Any, Text, Dict, List
 import os
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 import re
 import string
 
@@ -17,6 +18,30 @@ from fuzzywuzzy import process
 
 logging.basicConfig(level=logging.DEBUG)
 
+class AuthenticatedAction(Action):
+    def name(self) -> Text:
+        return "action_authenticated"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]
+            ) -> List[Dict[Text, Any]]:
+            username = tracker.get_slot("username")
+            password = tracker.get_slot("password")
+            #? Database connection
+            conn = DbQueryingMethods.create_connection(db_file="./django_rasa/db")
+            #? Query
+            cur = conn.cursor()
+            cur.execute(f'''SELECT * FROM Student WHERE user_name="{username}" and password="{password}"''')
+            rows = cur.fetchall()
+
+            if len(rows) > 0:
+                dispatcher.utter_message(template="utter_authenticated_successfully")
+                return [SlotSet("is_authenticated", True)]
+            else:
+                dispatcher.utter_message(text="utter_authentication_failure")
+                    
+            return []
 
 
 class Queryspecialization(Action):
@@ -32,6 +57,11 @@ class Queryspecialization(Action):
         specialization slot. Outputs an utterance to the user w/ the relevent 
         information for one of the returned rows.
         """
+        if tracker.slots.get("is_authenticated", False):
+            dispatcher.utter_message(text="utter_authentication_required")
+            return []
+        
+        
         conn = DbQueryingMethods.create_connection(db_file="./django_rasa/db")
 
         slot_value = tracker.get_slot("specialization")
@@ -46,7 +76,7 @@ class Queryspecialization(Action):
         return_text = DbQueryingMethods.rows_info_as_text(get_query_results)
         dispatcher.utter_message(text=str(return_text))
 
-        return 
+        return []
 
 
 
@@ -67,6 +97,10 @@ class QueryDegree(Action):
         type only, topic only in that order. Output is an utterance directly to the
         user with a randomly selected matching row.
         """
+        if tracker.slots.get("is_authenticated", False):
+            dispatcher.utter_message(text="utter_authentication_required")
+            return []
+
         conn = DbQueryingMethodsDegree.create_connection(db_file="./django_rasa/db")
 
         # get matching entries for resource type
@@ -113,7 +147,7 @@ class QueryDegree(Action):
         # print results for user
         dispatcher.utter_message(text=str(return_text))
 
-        return 
+        return []
 
 class DbQueryingMethods:
     def create_connection(db_file):
