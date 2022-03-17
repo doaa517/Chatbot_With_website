@@ -312,6 +312,13 @@ responses:
   - text: "Damascus: +963 112153360 / +963112066 \
       \ Latakia: 2566411-041 / 2593412-041"
 
+
+  utter_ask_username:
+  - text: Can you please provide me your username?
+
+  utter_ask_password:
+  - text: Thank you for providing username, can you please provide me your password?
+
   utter_authenticated_successfully:
   - text: Thank {username} for providing information, I have authenticated you sucessfully.
 
