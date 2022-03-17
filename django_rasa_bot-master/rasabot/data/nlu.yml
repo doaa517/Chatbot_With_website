@@ -1,0 +1,1048 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hey
+    - hi bot
+    - sup dude
+    - yo bro
+    - hi [ASPU](university_name)
+    - hy [ASPU](university_name) bot
+    - hi [ASPU](university_name) bot
+    - hi [Al-Sham Private University](university_name)
+    - hy [Al-Sham Private University](university_name) bot
+    - hi [Al-Sham Private University](university_name) bot
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Exit
+    - farewell
+    - good-bye
+    - see you soon
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - that is good
+    - alright then
+    - sounds good
+    - great
+    - yeah
+    - yup
+    - sure do
+    - I dure do
+    - I do
+    - I agree
+
+
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - I disagree
+    - I don't
+    - nah
+    - nope
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - what is your name?
+    - what are you?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+
+- intent: how_to
+  examples: |
+    - my day was horrible
+    - how can you help me ?
+    - can you help me ?
+    - what info can you provide me ?
+    - how can you help me
+    - help me
+
+
+- intent: about_us
+  examples: |
+    - why ASPU?
+    - is [ASPU](university_name) number 1 university?
+    - why should i choose [ASPU](university_name) university?
+    - why [ASPU](university_name) is good for me?
+    - why should i apply at [ASPU](university_name) university?
+    - why [ASPU](university_name) university?
+    - [ASPU](university_name)
+    - [Al-Sham Private University](university_name)
+    - why [Al-Sham Private University](university_name) university?
+    - info about [ASPU](university_name)
+    - info about university 
+    - about university 
+    - about the university 
+    - can you tell me about the [ASPU](university_name) university 
+    - info
+    - about
+    - [ASPU](university_name)
+    - [Al-Sham Private University](university_name)
+    - info about [ASPU](university_name)
+    - info about [Al-Sham Private University](university_name)
+    - info about 
+    - Information about your university
+    - Information about university
+    - Info about your university
+
+
+- intent: scholarship
+  examples: |
+    - how can i get scholarship?
+    - criteria for scholarship
+    - scholarship
+    - financial aid
+    - Can anyone guide me about scholarship? 
+    - I need information about the scholarship procedure.
+    - I need guidance through the procedure of scholarship application ? 
+    - I need guidance for the application of scholarship. 
+    - What is the process of scholarship application ? 
+    - I need information of the procedure of application of scholarship ?
+    - what is the process of scholarship?
+    - how can I get scholarship?
+    - what is the process of financial aid?
+    - how can I get financial aid?
+    - what is the process of need based scholarship
+    - what about study loan
+    - how can I get study loan
+    - how can I apply for study loan
+    - how can I apply for financial aid
+    - where can I apply for financial aid?
+    - where can I apply for scholarship?
+
+
+- intent: college
+  examples: |
+    - colleges
+    - What are the specializations in this university?
+    - Specialties in [ASPU](university_name)
+    - Colleges in the university
+    - colleges in [ASPU](university_name)
+    - Colleges in [Al-Sham Private University](university_name)
+    - Specialties
+    - Do you have a college of [computer science](specialization)?
+    - Is there a [CS](specialization) college?
+    - [Medical](specialization) College
+    - Is the [medical](specialization) college open in your university?
+    - College of [Business Administration](specialization)
+    - Faculty of [medicine](specialization)
+    - Faculty
+    - [Administrative](specialization)
+    - College of [Economics and Finance](specialization)
+    - [engineering](college_type) colleges
+    - [Scientific and engineering](college_type) colleges
+    - Faculty of [Applied Science](specialization)
+    - College of [Engineering and Islamic Architecture](specialization)
+    - Is there a Faculty of [Law](specialization)?
+    - [Law](specialization)
+    - College of [Computer and Information Systems](specialization)
+    - College of [Computer](specialization) and [Information Systems](specialization)
+    - [medical](college_type) colleges
+    - Faculty of [medicine](specialization)
+    - College of Applied [Medical Sciences](specialization)
+    - Faculty of [Dentistry](specialization)
+
+
+
+
+- intent: branche
+  examples: |
+    - branch
+    - location
+    - where is it?
+    - where?
+    - University branches
+    - [ASPU](university_name) branches
+    - [Al-Sham Private University](university_name) branches
+    - university location
+    - [ASPU](university_name) place
+    - place
+    - [ASPU](university_name) location
+    - [Al-Sham Private University](university_name) location
+    - University location
+    - Where is the main location of the university?
+    - What are the university branches?
+    - Is the university in [Damascus](location)?
+    - Is the university far from [Aleppo](location) ?
+    - Is the university nearby from [Damas](location) ?
+    - Is the university nearby from [Latakia](location) ?
+    - Where is the university?
+    - headquarter
+    - where is headquarter of [ASPU](university_name)
+    - where is headquarter of [Al-Sham Private University](university_name)
+    - where is headquarter located
+    - location of [ASPU](university_name) headquarter
+    - [ASPU](university_name) headquarter
+    - [ASPU](university_name) headqurater location
+    - [Al-Sham Private University](university_name) headquarter
+    - [Al-Sham Private University](university_name) headqurater location
+
+
+
+- intent: academic_period
+  examples: |
+    - When does the academic year of the university begin and end ?
+    - What schedule of the academic year does the university follow ?
+    - When does the academic year of the university start?
+    - When does the academic year ends?
+
+
+- intent: connect_us
+  examples: |
+    - [phone number](communication_mechanism)
+    - How can I contact you?
+    - University contact
+    - contact [numbers](communication_mechanism)
+    - [ASPU](university_name) [number](communication_mechanism)
+    - [Al-Sham Private University](university_name) [number](communication_mechanism)
+    - [Numbers](communication_mechanism)
+    - [social media](communication_mechanism) accounts
+    - University [accounts](communication_mechanism)
+    - [Email](communication_mechanism) to contact the university
+    - How can I send an [email](communication_mechanism) to your university?
+    - [Al-Sham Private University](university_name) [email](communication_mechanism)
+    - Where can I [visit](communication_mechanism) you for some inquiries?
+    - [ASPU](university_name) [social media](communication_mechanism)
+    - [Al-Sham Private University](university_name) [social media](communication_mechanism)
+    - how to contact [ASPU](university_name)
+    - contact details
+    - how to connect with [ASPU](university_name)
+    - how to reach [ASPU](university_name)
+    - [ASPU](university_name) contact [number](communication_mechanism)
+    - [ASPU](university_name) contact
+    - contacts
+
+
+- intent: students_affair
+  examples: |
+    - where is student affair office?
+    - where is student affair office located?
+    - student affair office
+    - office of student affair
+
+
+- intent: hostel
+  examples: |
+    - [Al-Sham Private University](university_name) does provide hostel?
+    - Can you talking about hostel?
+    - hostel ?
+    - hostel !
+    - nearby hostel ?
+    - nearby hotel
+    - student quater
+    - any hostel provided ?
+    - does college provide hostel
+    - is there hostel available
+    - hostel for [girls](student_gender)
+    - hostel for [boys](student_gender)
+    - hostel facility
+    - incampus hostes
+    - hostel
+    - Does the university provide housing for [foreign students](student_type)?
+    - Does the university provide housing for [non-Syrian students](student_type)?
+    - Is there a hostel affiliated with the university?
+    - place to stay
+    - place to live nearby
+    - place to sleep nearby
+    - live
+    - place to chill
+    - does [ASPU](university_name) provide free hostel ?
+    - free hostel ?
+
+
+
+
+- intent: approved_system
+  examples: |
+    - approved system
+    - Do you use the clock system?
+    - Do you adopt the number of courses system or the number of hours system?
+    - Number of hours per college
+    - What is the number of hours for the college of [computer sciences](specialization)?
+    - [computer engineering](specialization) hours
+    - [CS](specialization) hours
+    - number of [medical](specialization) hours
+    - What are the hours of [medical](specialization) college?
+    - The number of hours required to graduate from the Faculty of [Medicine](specialization)
+    - number of hours [Business Administration](specialization)
+    - Do you use houres system?
+
+
+- intent: houres_system
+  examples: |
+    - Can you explain to me what the clock system means?
+    - What is the university's hours system?
+    - clock system
+    - Can you explain to me what the houres system means?
+    - What does the clock system mean for courses?
+    - houres system
+    - Whahourest does the houres system mean for courses?
+    - Define houres system
+    - Explanation of the clock system
+    - Explanation of the houres system
+
+
+
+- intent: feedback_and_did_that_help
+  examples: |
+    - thanks
+    - great help
+    - good help
+    - Thanks a lot
+    - Thanks, you helped me a lot
+    - thank you
+    - Thx
+    - This was very useful!
+    - Amazing, thank u
+    - thank you
+
+
+- intent: financial_reward
+  examples: |
+    - Are there rewards for the student during his studies?
+    - Are there rewards for the student in each semster?
+    - Reward
+    - rewards
+    - Financial rewards
+    - financial reward
+    - What is the value of the financial reward?
+    - What are the conditions for receiving the reward?
+    - What is the amount of the financial reward?
+    - How can I withdraw the financial reward?
+
+
+
+
+- intent: costs
+  examples: |
+    - Is registration in [ASPU](university_name) free?
+    - Is education at [Al-Sham Private University](university_name) free?
+    - Is education free?
+    - What are the costs of studying at [Al-Sham Private University](university_name)?
+    - free technical edu
+    - tech edu free
+    - free edu
+    - low cost edu
+    - can i get free education ?
+    - how can i get free education ?
+    - how can i get scholarship ?
+    - how can i get free education
+
+
+- intent: semester
+  examples: |
+    - semesters
+    - number of semesters
+    - How many semesters a student can enroll in a year?
+    - Number of semesters per year
+    - Maximum number of semesters per year
+    - Minimum number of semesters per year
+
+
+- intent: basic_semester
+  examples: |
+    - how many courses can we register in [first semester](semester) ?
+    - how many courses can we opt in [first semester](semester) ?
+    - course limit in [first semester](semester) ?
+    - courses in [first semester](semester) 
+    - Is the [first semester](semester) optional?
+    - Is the [first semester](semester) compulsory?
+    - [first semester](semester) 
+    - How many courses can be registered in the [first semester](semester) ?
+    - How many courses can we enroll in in the [first semester](semester) ?
+    - How many courses do we choose in the [first semester](semester) ?
+    - [first semester](semester) course limit?
+    - [first semester](semester) courses
+    - How many hours can be registered in the [first semester](semester) ?
+    - How many hours can we register in the [first semester](semester) ?
+    - How many hours can I register for in the [first semester](semester) ?
+    - How many hours do we register in the [first semester](semester) ?
+    - What is the limit of hours in the [first semester](semester) ?
+    - Hours in [first semester](semester)
+    - What are the hours limit in [first semester](semester) ?
+    - Minimum hours in [first semester](semester)
+    - maximum hours in [first semester](semester)
+    - The maximum hours in the [first semester](semester)
+    - [first semester](semester) 
+    - What are the hours limit in the [first semester](semester) ?
+    - how many courses can we register in [second semester](semester) ?
+    - how many courses can we opt in [second semester](semester) ?
+    - course limit in [second semester](semester) ?
+    - courses in [second semester](semester) 
+    - Is the [second semester](semester) optional?
+    - Is the [second semester](semester) compulsory?
+    - [second semester](semester) 
+    - How many courses can be registered in the [second semester](semester) ?
+    - How many courses can we enroll in in the [second semester](semester) ?
+    - How many courses do we choose in the [second semester](semester) ?
+    - [second semester](semester) course limit?
+    - [second semester](semester) courses
+    - How many hours can be registered in the [second semester](semester) ?
+    - How many hours can we register in the [second semester](semester) ?
+    - How many hours can I register for in the [second semester](semester) ?
+    - How many hours do we register in the [second semester](semester) ?
+    - What is the limit of hours in the [second semester](semester) ?
+    - Hours in [second semester](semester)
+    - What are the hours limit in [second semester](semester) ?
+    - Minimum hours in [second semester](semester)
+    - maximum hours in [second semester](semester)
+    - The maximum hours in the [second semester](semester)
+    - [second semester](semester) 
+    - What are the hours limit in the [second semester](semester) ?
+
+
+- intent: summer_semester
+  examples: |
+    - how many courses can we register in summer semester?
+    - how many courses can we register in summer?
+    - how many courses can we opt in summer semester?
+    - course limit in summer?
+    - courses in summer
+    - Is the summer semester optional?
+    - Is the summer semester compulsory?
+    - summer semester
+    - How many courses can be registered in the [summer](semester) semester?
+    - How many courses can we enroll in in the [summer](semester) ?
+    - How many courses do we choose in the [summer](semester) semester?
+    - [Summer](semester) course limit?
+    - [Summer](semester) courses
+    - How many hours can be registered in the [summer](semester) semester?
+    - How many hours can we register in the [summer](semester) ?
+    - How many hours can I register for in the [summer](semester) ?
+    - How many hours do we register in the [summer](semester) semester?
+    - What is the limit of hours in the [summer](semester) ?
+    - Hours in [summer](semester)
+    - What are the hours limit in [summer](semester) ?
+    - Minimum hours in [summer](semester)
+    - maximum hours in [summer](semester)
+    - The maximum hours in the [summer](semester)
+    - [summer](semester) semester
+    - What are the hours limit in the [summer](semester) semester?
+
+
+
+- intent: register_new_student
+  examples: |
+    - register new student
+    - What are the requirements to register at [Al-Sham Private University](university_name) University?
+    - I am a new student and I want to register at your university, how can I do that?
+    - What are the university registration procedures?
+    - Registration processes
+    - Registration mechanism
+    - How do I register in [Al-Sham Private University](university_name) University?
+    - How do I register in [ASPU](university_name) university
+
+
+
+- intent: academic_averages_new_std
+  examples: |
+    - The academic averages required to register in each college
+    - Required academic average for [medical](specialization) college
+    - The required academic average for the College of [Computer Engineering](specialization)
+    - average rate required for registration in each college
+    - The average required for the Faculty of [Medicine](specialization)
+    - The desired academic rate for the College of [Computer Engineering](specialization)
+    - Rates
+    - rates
+    - required academic rate
+    - Required rates
+    - average rate required
+    - academic rate
+    - desired academic rate
+
+
+
+
+- intent: conversion_to_ASPU
+  examples: |
+    - Conversion from other universities to [Al-Sham Private University](university_name) University
+    - conditions of conversion
+    - conversion to [ASPU](university_name)
+    - can I convert to your university?
+    - terms of transition
+    - I am a student at another university, can I convert to your university?
+    - transition to the university
+    - transfer to [Al-Sham Private University](university_name) University
+    - what are the conditions of conversion from my current university to your university?
+    - what are the terms of transition to your university?
+    - Under which circumstances will the transfer not be considered ?
+    - In which case will the transfer request not be accepted ?
+    - can i transfer my admission to other university?
+    - What is the procedure for admission at [ASPU](university_name) for students who have earned credits in other institutions ?
+    - transfer
+    - What procedure do the students go through who have earned credit from other insitutions and aspire to get admission in [ASPU](university_name) ?
+    - Explain your policy for credits earned through different institution?
+    - could I transfer my credit hours from other universities
+    - What is the information regarding transfer ? 
+    - What are the details about transfer ? 
+    - What are the updates in regards to the transfer ? 
+    - Is there any information available about the transfer ? 
+    - How will the transfer take place ?
+
+
+- intent: graduate_studies
+  examples: |
+    - Graduate Studies
+    - Is there at the University of [Al-Sham Private University](university_name) ?
+    - Is there a high studies?
+    - Conditions of graduate studies
+    - Can I supplement postgraduate studies in your university?
+    - What are the conditions for graduate studies in [ASPU](university_name)?
+    - Postgraduate Conditions in [ASPU](university_name)
+    - postgraduate 
+    - Does your university have a [diploma](graduate_studies_type) ?
+    - Does [Al-Sham Private University](university_name) University have a [diploma](graduate_studies_type) ?
+    - Is there a [master](graduate_studies_type) in [ASPU](university_name) ?
+    - Can I get a [master's](graduate_studies_type) degree at [Al-Sham Private University](university_name) University?
+    - Does [ASPU](university_name) have a [Ph.D.](graduate_studies_type) ?
+    - Does Al-Sham Private University have a [PhD](graduate_studies_type) ?
+    - postgraduate in [ASPU](university_name)
+
+
+- intent: diploma
+  examples: |
+    - [diploma](graduate_studies_type)
+    - I want a [diploma](graduate_studies_type)
+    - [diploma](graduate_studies_type) in [ASPU](university_name)
+    - [diploma](graduate_studies_type) in [ASPU](university_name) is free?
+    - free [diploma](graduate_studies_type)
+    - Is a [diploma](graduate_studies_type) degree free?
+    - The [diploma](graduate_studies_type) is not free!
+    - [diploma](graduate_studies_type) conditions
+    - Conditions for applying for [diploma](graduate_studies_type) in [ASPU](university_name)
+
+
+
+- intent: masters
+  examples: |
+    - [Masters](graduate_studies_type)
+    - I want a [master's](graduate_studies_type)
+    - [Masters](graduate_studies_type) in [ASPU](university_name)
+    - [masters](graduate_studies_type) in [ASPU](university_name) is free?
+    - free [masters](graduate_studies_type)
+    - Is a [master's](graduate_studies_type) degree free?
+    - The [Masters](graduate_studies_type) is not free!
+    - [master's](graduate_studies_type) conditions
+    - Conditions for applying for [master's](graduate_studies_type) in [ASPU](university_name)
+
+
+
+- intent: PhD
+  examples: |
+    - [PhD](graduate_studies_type)
+    - I want a [PhD](graduate_studies_type)
+    - [PhD](graduate_studies_type) in [ASPU](university_name)
+    - [PhD](graduate_studies_type) in [ASPU](university_name) is free?
+    - free [PhD](graduate_studies_type)
+    - Is a [PhD](graduate_studies_type) degree free?
+    - The [PhD](graduate_studies_type) is not free!
+    - [PhD](graduate_studies_type) conditions
+    - Conditions for applying for [PhD](graduate_studies_type) in [ASPU](university_name)
+
+
+- intent: username
+  examples: |
+    - my name is [akhilesh](username)
+    - my name is [aditya](username)
+    - my name is [test123](username)
+    - my name is [smita](username)
+    - my name is [shashank](username)
+    - my name is [vinayak](username)
+    - my name is [yash](username)
+    - my name is [sneha](username)
+    - i am [akhilesh](username)
+    - i am [aishwarya](username)
+    - my name is [R12 white](username)
+    - my name is [shalini](username)
+    - my name is [Shouq](username)
+    - my name is [bhargavi](username)
+    - [sameer](username) is my name
+    - [Noor](username) is my name
+    - [yosef](username) is my name
+    - [noura](username) is my name
+    - [rahaf R123](username) is my name
+    - [Noor Al-hussini](username) is my name
+    - [Hyam](username) is my name
+    - [Renad](username) is my name
+    - [R438005644](username) is my name
+    - [user](username) is my name
+    - [abc](username) is my name
+    - [437013780](username) is my name
+    - [ajinkya](username)
+    - [sameer](username)
+    - [chintan](username)
+    - [jyoti](username)
+    - [chaitanya](username)
+    - [riya](username)
+    - [aisha](username) is my name
+    - my name is [ajinkya](username)
+    - [aditya](username)
+    - [vinayak](username)
+    - [h434008911hy](username)
+    - [utkarsh](username)
+    - [ankita](username)
+    - myself [anuja](username)
+    - myself [asha](username)
+    - myself [Lisa](username)
+    - my name is Arun
+    - my name is [savita](username)
+    - my name is [sara](username)
+    - my name is [438003385r&&r12](username)
+    - [arjun](username)
+    - my name is [satya](username)
+    - my name is [rahaf](username)
+    - [hyam](username)
+    - [kiran](username)
+    - [anagha](username)
+    - [sameer](username)
+    - [yogendra](username)
+    - [sundous](username)
+    - [lisa](username)
+    - [enas](username)
+    - [sam](username)
+    - [Leen](username)
+    - [Nour](username)
+    - [Hani](username)
+    - I'm [John](username)
+    - [aladdin](username)
+    - my name is [jack](username)
+    - hi i am [xiao ming](username)
+    - call me [alice](username)
+    - [kai](username)
+    - i'm [paul](username)
+    - hi i'm [Nick](username)
+    - hello call me [Jia Ling](username)
+    - my name is [Anuj](username)
+    - i am [mary ong](username)
+    - hey call me [Zara](username)
+    - yo i am [renee](username)
+    - i am [wei ling](username)
+    - you can address me as [mr tan](username)
+    - i am [aaron](username)
+    - [carl](username)
+    - i am [paula](username)
+    - [shyann](username)
+    - im [mike](username)
+    - you can call me [rsykoss](username)
+    - im [jie ying](username)
+    - call me [wei lun](username)
+    - call me [michelle obama](username)
+    - im [elizabeth](username)
+    - I'm [keith](username)
+    - [jay](username)
+    - [chris](username)
+    - [sy](username)
+    - [yy](username)
+    - [jj](username)
+    - [Michael](username)
+    - [liza peet](username)
+    - [dunkel hills](username)
+    - [Clarisa Attwood](username)
+    - [Melanie Bonavita](username)
+    - [Jia Hui](username)
+    - [Zhi Hao](username)
+    - [Yi Ling](username)
+    - [Grazyna Schiel](username)
+    - [Hyacinth](username)
+    - [Alexis](username)
+    - [Gisela](username)
+
+
+
+
+- intent: out_of_scope
+  examples: |
+    - I am asking you an out of scope question
+    - 4 + 2 = ?
+    - After registration I see that I have an available balance of 0.00000000. What does this balance represent?
+    - Are you ready?
+    - But you're an english site :(
+    - Can I ask you questions first?
+    - Can I die
+    - Can I get a hamburger?
+    - Can YouTube talk?
+    - Can you call me back ?
+    - Can you give me your datacenter's password
+    - Can you give me your datacenter's password?
+    - Can you make sandwiches?
+    - Can you please send me an uber
+    - Do I have to accept?
+    - Do you know [Kevin Pelton](name)
+    - Find nearest [pizzahut](company)
+    - Have we met before?
+    - HomeBase is advertised as a community. Is there a way to interact with other members of the community?
+    - How long does it take to set up a Rasa bot?
+    - I already told you! I'm a shitmuncher
+    - I am User
+    - I am hungry
+    - I am trying to build one, and did some research before, but I have not do hand-on work yet
+    - I can barely see this white text on light gray background ...
+    - I changed my mind
+    - I have installed it
+    - I ned a GP in 94301
+    - I need a GP in 94301
+    - I need a girl friend!
+    - I need to eat cake
+    - I wan to buy a plane
+    - I wanna marry you
+    - I want a new laptop
+    - I want book a hotel
+    - I want french cuisine
+    - I want pizza
+    - I want to die
+    - I want to order pizza
+    - I want to use pipe
+    - I will check
+    - I'm a shitmuncher
+    - Is Rasa really smart?
+    - Is this Goal-Oriented Chatbot?
+    - Is today saturday?
+    - Mail me the guide
+    - Make me a sandwich
+    - NLW
+    - Nice name
+    - Now?
+    - Pizza bot
+    - Recharge
+    - SEL ME SOMETHING
+    - The Try it out is not working
+    - The weather is good
+    - Today
+    - Try it out broken
+    - What day is it today?
+    - What did you eat yesterday?
+    - What do you prefer?
+    - What is todays date
+    - What day is today?
+    - What is your favorite food?
+    - What do you suggest me cosmetics?
+    - What is your hobbies?
+    - What makes you better than a human?
+    - What's 1 + 1?
+    - What's 4 + 1 * 2.3 / 2 ?
+    - What's do YouTube do
+    - What's your backend system?
+    - Where am I right now?
+    - Where am I?
+    - Who ?
+    - Who are your customers
+    - Why don't you answer?
+    - Why is my TRUST score set to 50 after I completed the registration process?
+    - Won't you ask me how I am?
+    - You'r blue.
+    - [Leen](name), I want to marry you
+    - [german](language)?
+    - [arabic](language)?
+    - a tamed mouse will arrive at your doorstep in the next couple of days
+    - aRE YOU SINGLE
+    - again?
+    - out_of_scope
+    - why its called rasa ?
+    - will u kill me
+    - will u kill me?
+    - winter is already leaving
+    - with you recommend me?
+    - would you like some water
+    - yeah, my dog was drinking a couple of litres of water per day and tried drinking the swimming pool
+    - you already have that
+    - you can learn how to make a coffe
+    - you have children?
+    - you have job opening
+    - you lock sweety
+    - you should learn to count
+    - you will know it from the single red rose it carries between its teeth
+    - you're a woman
+    - i am learning python
+    - /out_of_scope
+    - how about schorship ?
+    - what?
+    - whats that
+    - whats the sign
+    - when is the next train is coming?
+    - where do i get install files for mac?
+    - where is Oslo?
+    - where is mexico?
+    - wheres the party?
+    - which city are you talking about?
+    - which email
+    - which email should i send to ?
+    - which file is created first while developing chat bot
+    - which is the LNU asynchronism ?
+    - which kind
+    - who are the engineers at rasa?
+    - who are they?
+    - who is [Sharon Zeches](name)
+    - who is the MD of samsung bangalore ?
+    - who is the president of egypt?
+    - who is your favourite robot?
+    - who let the dog out
+    - who was hitler
+    - who will anser my email?
+    - who's Bill Gates?
+    - whta you think about gdpr?
+    - why
+    - why do you need that?
+    - what films do you like
+    - what i do after cd starter-pack-rasa-stack?
+    - what is a discourse?
+    - what is a mascot
+    - what is adlingo
+    - what is differance between bot and mascot?
+    - what is evolution ?
+    - what is google rcs
+    - what is machine learning
+    - what is nice?
+    - what is the capital of KSA
+    - what is the capital of jordon
+    - what is the current petrol price
+    - what is the day ?
+    - what is the real use case where we can use this one
+    - what is your address?
+    - what is your purpose
+    - what lnu mean?
+    - what the latest news ?
+    - what you ate today?
+    - what's 5 + 5
+    - what's a newsletter?
+    - what's gingerale
+    - what's your wife doing this weekend
+    - show me a picture of a chicken
+    - silly bot
+    - sing me a song
+    - so, I'm helping right now to training you?
+    - some thing else
+    - someone call the police i think the bot died
+    - sorry, i cannot rephrase
+    - sudo make me a sandwich
+    - tell me about yourself
+    - tell me more about next best action
+    - that doesn't sound like a joke
+    - that link doesn't work!
+    - the one that is better than you
+    - tricked  ya
+    - turn off my stove
+    - umm
+    - wait a bit i am still reading
+    - what about wheather
+    - what are contextual AI assistants and how different are they from chatbots?
+    - what are you doing now?
+    - what are your uses for universities
+    - what did you eat for lunch?
+    - what do oyu think about siri?
+    - what do you think abou siri?
+    - what do you think about [Stanley Ramirez](name)?
+    - what do you think of alexa
+    - what does your soul feel my friend
+    - what doing
+    - what else?
+    - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
+    - offer me lunch
+    - oh my god, not again!
+    - oh wait i gave you my work email address can i change it?
+    - ok one then
+    - on wiche nlp based system are you build?
+    - only that?
+    - order good
+    - order pizza
+    - personal or work?
+    - pizza
+    - please help with my ice cream it's dripping
+    - please hjave lunchj
+    - please hurry, i have deadline in two weeks to deliver the bot it is for very big company
+    - please play music
+    - rasa topics
+    - really? you're so touchy?
+    - refresh
+    - region with no. of records
+    - remember my name
+    - search wikipedia
+    - shitmuncher
+    - i am hungry
+    - i am hungry, what should i do?
+    - i am not a developer but need this for business
+    - i am qq
+    - i can't deal with _your_ request
+    - i do not care how are you
+    - i hope you will be better
+    - i immediately need help with implementing the coolest bot you can imagine
+    - i m looking for job
+    - i told you already
+    - i wanna party
+    - i want a non dripping ice cream
+    - i want caffe
+    - i want food
+    - i want good flycam
+    - i want more of you in my life!
+    - i want pizza
+    - i want pizza!!
+    - i want to book a hotel
+    - i want to buy a roomba for my grandson
+    - i want to eat
+    - i want to find new friends
+    - i want to find out what you can build with rasa
+    - i want to fly
+    - i want to grab lunch
+    - i want to know current situtation in pakistan
+    - i want to order a pizza
+    - i want to see your happy customers
+    - i will tame a mouse for you
+    - is [John Lewis](name) still married to you
+    - is it a wasteland full of broken robot parts?
+    - is it allow to
+    - is rasa a studio?
+    - is rasa any good
+    - is that any of your business
+    - isn't the newsletter just spam?
+    - it's a pity
+    - i'm hungry
+    - license
+    - ljljl
+    - lunch
+    - lunch??
+    - machine learning
+    - mail me the steps
+    - mascot means?
+    - more
+    - mountain
+    - my name k
+    - 265865
+    - fsrdtfyguio
+    - great, I'd like to buy a house
+    - hang on let me find it
+    - have you ever seen [Keith Reilly](name)?
+    - help with [Alma Abrams](name)
+    - help with my life
+    - hey little mama let em whisper in your ear
+    - hey, I contacted you a couple of days ago but didn't get any response, any news?
+    - how
+    - how about NYC
+    - how are [Alicia Jackson](name)'s cats doing?
+    - how are the kids
+    - how can i get them?
+    - how can i test this
+    - how come you say ok ?
+    - how come?
+    - how do you learn
+    - how good is Rasa
+    - how it compares to alexa
+    - how long have you been online?
+    - how long will the next version will launch?
+    - how many lines of codes
+    - how much is 10 + 89 ?
+    - how much is 10 + 89
+    - how to get rasa studio
+    - how to go to newyork ?
+    - common, just try
+    - connect to alexa
+    - cr
+    - custom service
+    - did i break you
+    - dinner
+    - do you believe in god?
+    - do you have a phone number?
+    - do you have your photo?
+    - do you know me
+    - do you know ras
+    - do you liek cheese?
+    - do you like football
+    - do you like movies
+    - do you sell vacuum robots?
+    - do you want to marry me?
+    - docs
+    - doctor
+    - everything
+    - example of a chatbot
+    - genocide
+    - get me a club mate
+    - github link?
+    - give me a girl friend
+    - give me food
+    - go back
+    - google?
+    - alexa, order 5 tons of natrium chloride
+    - and make chicken noises into the phone
+    - are the newsletter worth the subscription?
+    - are u facebook
+    - are u, facebook?
+    - are you single?
+    - are you dev?
+    - are you human ?
+    - are you russian?
+    - are you sick
+    - are you using Rasa [Core](product) and [NLU](product) ?
+    - are you vegan
+    - better than you
+    - book a ticket
+    - but I just told you that :(
+    - but if rasa is open source why do you have a sales team
+    - buy one please
+    - buy groceries
+    - call me father
+    - can we keep chatting?
+    - can you book dinner
+    - can you cheer me up
+    - can you cook dinner
+    - can you give me a cup of coffee
+    - can you help me with the docs?
+    - can you help me with your docs
+    - can you help me with your docs?
+    - can you learn from our conversation?
+    - can you speak about politic ?
+    - can you understand ?
+    - cannot see
+    - chgfhgh
+    - [chinese](language) ok?
+    - colder
+
+- intent: degree
+  examples: |
+    - What is my degree in [programming](course_name)
+    - What is my degree in [history](course_name)
+    - What is my degree in [machine learning](course_name)
+
+

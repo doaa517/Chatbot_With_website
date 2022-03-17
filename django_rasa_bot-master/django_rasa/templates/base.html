@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>ASPU</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Unicat project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- required for basic layout -->
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}rasa/css/botui.min.css">
+	<!-- default theme - you can create your own theme -->
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}rasa/css/botui-theme-default.css">
+
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}styles/bootstrap4/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}plugins/font-awesome-4.7.0/css/font-awesome.min.css"  >
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}styles/main_styles.css">
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}styles/responsive.css">
+	{% block extra_css %}{% endblock extra_css %}
+</head>
+
+<body>
+
+	<div class="super_container">
+		<div
+			data-height="500"
+			data-root-element-id="storybook-preview-wrapper"
+			data-websocket-url="http://localhost:5005"
+			id="rasa-chat-widget"
+		/>
+		<script src="{{STATIC_URL}}rasa/js/widget.js" type="application/javascript"></script>
+
+		{% comment %} <div id="webchat">
+			<script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.5.0/lib/index.min.js"></script>
+			<script>
+				WebChat.default.init({
+					selector: "#webchat",
+					initPayload: "/get_started",
+					interval: 1000, // 1000 ms between each message
+					customData: {"sender": "user"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+					socketUrl: "http://localhost:5005/",
+					title: "Connect",
+					subtitle: "The bot which connects people",
+					profileAvatar: "https://rasa.com/assets/img/demo/rasa_avatar.png",
+					showCloseButton: true,
+					fullScreenMode: false
+				})
+			</script>
+		</div> {% endcomment %}
+
+		<!-- Header -->
+		<header class="header">
+
+			<!-- Top Bar -->
+			<div class="top_bar">
+				<div class="top_bar_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+									<ul class="top_bar_contact_list">
+										<li>
+											<div class="question">Have any questions?</div>
+										</li>
+										<li>
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											<div>00963999990000</div>
+										</li>
+										<li>
+											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+											<div>info@aspu.edu</div>
+										</li>
+									</ul>
+									<div class="top_bar_login ml-auto">
+										{% if user.is_authenticated %}
+										<div class="login_button">
+											<a href="{% url 'user:profile' %}">Profile</a>
+										</div>
+										<div class=""></div>
+										{% else %}
+										<div class="login_button"><a href="{% url 'user:login' %}">Student Login</a></div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Content -->
+			<div class="header_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_content d-flex flex-row align-items-center justify-content-start">
+								<div class="logo_container">
+									<a href="#">
+										<div class="logo_text">A<span>S</span>PU</div>
+									</a>
+								</div>
+								<nav class="main_nav_contaner ml-auto">
+									<ul class="main_nav">
+										<li><a href="/#">Home</a></li>
+										<li><a href="/#about">About</a></li>
+										<li><a href="{% url 'university:branches' %}">Branches</a></li>
+										<li><a href="{% url 'university:faculties' %}">Faculties</a></li>
+										<li><a href="{% url 'university:courses' %}">Courses</a></li>
+									</ul>
+									<div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
+
+									<!-- Hamburger -->
+									<div class="hamburger menu_mm">
+										<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+									</div>
+								</nav>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Search Panel -->
+			<div class="header_search_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+								<form action="#" class="header_search_form">
+									<input type="search" class="search_input" placeholder="Search" required="required">
+									<button
+										class="header_search_button d-flex flex-column align-items-center justify-content-center">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+			<div class="menu_close_container">
+				<div class="menu_close">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="search">
+				<form action="#" class="header_search_form menu_mm">
+					<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+					<button
+						class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+						<i class="fa fa-search menu_mm" aria-hidden="true"></i>
+					</button>
+				</form>
+			</div>
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li class="menu_mm"><a href="index.html">Home</a></li>
+					<li class="menu_mm"><a href="#">About</a></li>
+					<li class="menu_mm"><a href="#">Courses</a></li>
+					<li class="menu_mm"><a href="#">Blog</a></li>
+					<li class="menu_mm"><a href="#">Page</a></li>
+					<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		{% block content %}{% endblock content %}
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer_background" style="background-image:url({{STATIC_URL}}images/footer_background.png)">
+			</div>
+			<div class="container">
+				<div class="row footer_row">
+					<div class="col">
+						<div class="footer_content">
+							<div class="row">
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer About -->
+									<div class="footer_section footer_about">
+										<div class="footer_logo_container">
+											<a href="#">
+												<div class="footer_logo_text">A<span>S</span>PU</div>
+											</a>
+										</div>
+										<div class="footer_about_text">
+											<p>Lorem ipsum dolor sit ametium, consectetur adipiscing elit.</p>
+										</div>
+										<div class="footer_social">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer Contact -->
+									<div class="footer_section footer_contact">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_contact_info">
+											<ul>
+												<li>Email: Info.deercreative@gmail.com</li>
+												<li>Phone: +(88) 111 555 666</li>
+												<li>40 Baria Sreet 133/2 New York City, United States</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer links -->
+									<div class="footer_section footer_links">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_links_container">
+											<ul>
+												<li><a href="index.html">Home</a></li>
+												<li><a href="about.html">About</a></li>
+												<li><a href="contact.html">Contact</a></li>
+												<li><a href="#">Features</a></li>
+												<li><a href="courses.html">Courses</a></li>
+												<li><a href="#">Events</a></li>
+												<li><a href="#">Gallery</a></li>
+												<li><a href="#">FAQs</a></li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row copyright_row">
+					<div class="col">
+						<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+							<div class="cr_text">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>
+									document.write(new Date().getFullYear());
+								</script> All rights reserved | ASPU</div>
+							<div class="ml-lg-auto cr_links">
+								<ul class="cr_list">
+									<li><a href="#">Copyright notification</a></li>
+									<li><a href="#">Terms of Use</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="{{STATIC_URL}}js/jquery-3.2.1.min.js"></script>
+	<script src="{{STATIC_URL}}styles/bootstrap4/popper.js"></script>
+	<script src="{{STATIC_URL}}styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="{{STATIC_URL}}plugins/greensock/TweenMax.min.js"></script>
+	<script src="{{STATIC_URL}}plugins/greensock/TimelineMax.min.js"></script>
+	<script src="{{STATIC_URL}}plugins/scrollmagic/ScrollMagic.min.js"></script>
+	<script src="{{STATIC_URL}}plugins/greensock/animation.gsap.min.js"></script>
+	<script src="{{STATIC_URL}}plugins/greensock/ScrollToPlugin.min.js"></script>
+	<script src="{{STATIC_URL}}plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="{{STATIC_URL}}plugins/easing/easing.js"></script>
+	<script src="{{STATIC_URL}}plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="{{STATIC_URL}}js/custom.js"></script>
+</body>
+
+</html>

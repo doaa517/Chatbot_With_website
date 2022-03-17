@@ -1,0 +1,509 @@
+version: "3.0"
+
+stories:
+
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_how_to
+
+
+- story: affirm
+  steps:
+  - intent: affirm
+  - action: utter_affirmation
+
+
+- story: deny
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+
+- story: chatbot usage
+  steps:
+  - intent: how_to
+  - action: utter_how_to
+
+
+- story: about ASPU
+  steps:
+  - intent: about_us
+  - action: utter_about
+
+
+- story: scholarships yes
+  steps:
+  - intent: scholarship
+  - action: utter_scholar
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_affirmation
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: scholarships no
+  steps:
+  - intent: scholarship
+  - action: utter_scholar
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+
+- story: colleges yes
+  steps:
+  - intent: college
+  - action: utter_college
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_affirmation
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+
+- story: colleges no
+  steps:
+  - intent: college
+  - action: utter_college
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+
+
+- story: computer science college
+  steps:
+  - intent: college
+    entities:
+    - specialization: "computer science"
+  - action: utter_computerscience_college
+
+
+- story: CS college
+  steps:
+  - intent: college
+    entities:
+    - specialization: "CS"
+  - action: utter_computerscience_college
+
+
+- story: Medical college
+  steps:
+  - intent: college
+    entities:
+    - specialization: "Medical"
+  - action: utter_medical_college
+
+
+
+- story: medical college
+  steps:
+  - intent: college
+    entities:
+    - specialization: "medical"
+  - action: utter_medical_college
+
+
+- story: medicine college
+  steps:
+  - intent: college
+    entities:
+    - specialization: "medicine"
+  - action: utter_medical_college
+
+
+
+- story: Law college
+  steps:
+  - intent: college
+    entities:
+    - specialization: "Law"
+  - action: utter_Law_college
+
+
+- story: Business Administration college
+  steps:
+  - intent: college
+    entities:
+    - specialization: "Business Administration"
+  - action: utter_Business_college
+
+
+- story: branches
+  steps:
+  - intent: branche
+  - action: utter_branches
+
+
+- story: branches Aleppo
+  steps:
+  - intent: branche
+    entities:
+    - location: "Aleppo"
+  - action: utter_branches_Aleppo
+
+
+
+- story: branches Damas
+  steps:
+  - intent: branche
+    entities:
+    - location: "Damas"
+  - action: utter_branches_Damascus
+
+
+
+- story: branches Damascus
+  steps:
+  - intent: branche
+    entities:
+    - location: "Damascus"
+  - action: utter_branches_Damascus
+
+
+
+- story: branches Latakia
+  steps:
+  - intent: branche
+    entities:
+    - location: "Latakia"
+  - action: utter_branches_Latakia
+
+
+
+- story: academic period
+  steps:
+  - intent: academic_period
+  - action: utter_period
+
+
+
+- story: connect with ASPU
+  steps:
+  - intent: connect_us
+  - action: utter_connect_us
+
+
+- story: connect phone
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "phone number"
+  - action: utter_connect_phone
+
+
+  
+- story: connect numbers
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "numbers"
+  - action: utter_connect_phone
+
+- story: connect number
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "number"
+  - action: utter_connect_phone
+
+- story: connect Number
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "Number"
+  - action: utter_connect_phone
+
+
+
+
+- story: connect social media
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "social media"
+  - action: utter_connect_social_media
+
+
+
+- story: connect accounts
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "accounts"
+  - action: utter_connect_social_media
+
+
+- story: connect email
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "email"
+  - action: utter_connect_email
+
+
+- story: connect Email
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "Email"
+  - action: utter_connect_email
+
+
+
+- story: connect visit
+  steps:
+  - intent: connect_us
+    entities:
+    - communication_mechanism: "visit"
+  - action: utter_connect_loction
+
+
+- story: students affairs
+  steps:
+  - intent: students_affair
+  - action: utter_students_affair
+
+
+- story: hostel
+  steps:
+  - intent: hostel
+  - action: utter_hostel
+
+
+- story: hostel girls
+  steps:
+  - intent: hostel
+    entities:
+    - student_gender: "girls"
+  - action: utter_girl_hostel
+
+
+- story: hostel boys
+  steps:
+  - intent: hostel
+    entities:
+    - student_gender: "boys"
+  - action: utter_boy_hostel
+
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+
+
+- story: approved system 
+  steps:
+  - intent: approved_system
+  - action: utter_approved_system
+
+
+- story: computer science approved system
+  steps:
+  - intent: approved_system
+    entities:
+    - specialization: "computer science"
+  - action: utter_computerscience_approved_system
+
+
+- story: CS approved system
+  steps:
+  - intent: approved_system
+    entities:
+    - specialization: "CS"
+  - action: utter_computerscience_approved_system
+
+
+
+- story: Medical approved system
+  steps:
+  - intent: approved_system
+    entities:
+    - specialization: "Medical"
+  - action: utter_medical_approved_system
+
+
+
+- story: medical approved system
+  steps:
+  - intent: approved_system
+    entities:
+    - specialization: "medical"
+  - action: utter_medical_approved_system
+
+
+- story: Business Administration approved system
+  steps:
+  - intent: approved_system
+    entities:
+    - specialization: "Business Administration"
+  - action: utter_Business_approved_system
+
+
+
+- story: Law approved system
+  steps:
+  - intent: approved_system
+    entities:
+    - specialization: "Law"
+  - action: utter_Law_approved_system
+
+
+- story: houres system 
+  steps:
+  - intent: houres_system
+  - action: utter_houres_system
+
+
+- story: feedback 
+  steps:
+  - intent: feedback_and_did_that_help
+  - action: utter_feedback
+  - action: utter_goodbye
+
+- story: financial reward 
+  steps:
+  - intent: financial_reward
+  - action: utter_financial_reward
+
+
+- story: cost 
+  steps:
+  - intent: costs
+  - action: utter_cost
+
+
+- story: semesters 
+  steps:
+  - intent: semester
+  - action: utter_semesters
+
+
+
+- story: basic semesters 
+  steps:
+  - intent: basic_semester
+  - action: utter_basic_semesters
+
+
+- story: summer semester 
+  steps:
+  - intent: summer_semester
+  - action: utter_summer_semester
+
+
+- story: ask rephrase 
+  steps:
+  - intent: out_of_scope
+  - action: utter_ask_rephrase
+
+
+- story: register new student 
+  steps:
+  - intent: register_new_student
+  - action: utter_register_new_std
+
+
+- story: avg new std 
+  steps:
+  - intent: academic_averages_new_std
+  - action: utter_avg_new_std
+
+
+- story: conversion 
+  steps:
+  - intent: conversion_to_ASPU
+  - action: utter_conversion
+
+
+
+- story: graduate studies 
+  steps:
+  - intent: graduate_studies
+  - action: utter_graduate_studies
+
+
+- story: graduate studies diploma
+  steps:
+  - intent: graduate_studies
+    entities:
+    - graduate_studies_type: "diploma"
+
+  - action: utter_graduate_studies_diploma
+
+
+
+- story: graduate studies master
+  steps:
+  - intent: graduate_studies
+    entities:
+    - graduate_studies_type: "master"
+  - action: utter_graduate_studies_master
+
+
+- story: graduate studies master's
+  steps:
+  - intent: graduate_studies
+    entities:
+    - graduate_studies_type: "master's"
+  - action: utter_graduate_studies_master
+
+
+- story: graduate studies PhD
+  steps:
+  - intent: graduate_studies
+    entities:
+    - graduate_studies_type: "PhD"
+  - action: utter_graduate_studies_PhD
+
+
+- story: graduate studies Ph.D.
+  steps:
+  - intent: graduate_studies
+    entities:
+    - graduate_studies_type: "Ph.D."
+  - action: utter_graduate_studies_PhD
+
+
+- story: diploma 
+  steps:
+  - intent: diploma
+  - action: utter_diploma
+
+
+- story: masters 
+  steps:
+  - intent: masters
+  - action: utter_masters
+
+
+- story: PhD 
+  steps:
+  - intent: PhD
+  - action: utter_PhD
+
+
+- story: user name  
+  steps:
+  - intent: username
+  - action: utter_name
+
+
+
+
+- story: student degree
+  steps:
+  - intent: degree
+  - action: query_degree
+
