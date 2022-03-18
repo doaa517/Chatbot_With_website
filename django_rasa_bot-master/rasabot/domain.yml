@@ -33,6 +33,8 @@ intents:
   - username
   - out_of_scope
   - degree
+  - inform
+  - authentication
 
 
 entities:
@@ -53,22 +55,29 @@ entities:
 
 slots:
   username:
-    initial_value: Human
     type: text
+    influence_conversation: true
     mappings:
-    - type: custom
+    - type: from_entity
+      entity: username
+
   password:
     type: text
-    influence_conversation: false
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: password
   
   is_authenticated:
     type: bool
     initial_value: false
+    influence_conversation: true
     mappings:
       - type: custom
 
+
 # slots:
-#   username:
+#  username:
 #     initial_value: Human
 #     type: text
 #     mappings:
@@ -312,7 +321,6 @@ responses:
   - text: "Damascus: +963 112153360 / +963112066 \
       \ Latakia: 2566411-041 / 2593412-041"
 
-
   utter_ask_username:
   - text: Can you please provide me your username?
 
@@ -325,9 +333,6 @@ responses:
   utter_authentication_failure:
   - text: Sorry, I wasn't able to authenticate you. Please check if your provided information is correct or not.
 
-  utter_authentication_required:
-  - text: Login required.
-
 
 actions:
 - action_save_name
@@ -336,12 +341,9 @@ actions:
 
 forms:
   auth_form:
-    username:
-    - type: from_entity
-      entity: username
-    password:
-    - type: from_entity
-      entity: password
+    required_slots:
+        - username
+        - password
 
 
 session_config:

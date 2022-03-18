@@ -1055,3 +1055,30 @@ nlu:
     - login
     - authenticate
     - log me in
+
+- intent: inform
+  examples: |
+    - my username is [doaa](username)
+    - my password is [12345](password)
+    - my username is [doaa](username) and my password is [12345](password)
+    - username [doaa](username)
+    - password [12345](password)
+    - username [doaa](username) and password [12345](password)
+    - my username is [ali](username)
+    - my password is [1234567890](password)
+    - my username is [ali](username) and my password is [1234567890](password)
+    - username [ali](username)
+    - password [1234567890](password)
+    - username [ali](username) and password [1234567890](password)
+    - my username is [ahmad](username)
+    - my password is [a12345](password)
+    - my username is [ahmad](username) and my password is [a12345](password)
+    - username [ahmad](username)
+    - password [a12345](password)
+    - username [ahmad](username) and password [a12345](password)
+    - my username is [yara](username)
+    - my password is [yara123321](password)
+    - my username is [yara](username) and my password is [yara123321](password)
+    - username [yara](username)
+    - password [yara123321](password)
+    - username [yara](username) and password [yara123321](password)
