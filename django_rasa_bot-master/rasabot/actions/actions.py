@@ -18,6 +18,8 @@ from fuzzywuzzy import process
 
 logging.basicConfig(level=logging.DEBUG)
 
+db_path = r"./django_rassa/db.db"
+
 class AuthenticatedAction(Action):
     def name(self) -> Text:
         return "action_authenticated"
@@ -29,7 +31,7 @@ class AuthenticatedAction(Action):
             username = tracker.get_slot("username")
             password = tracker.get_slot("password")
             #? Database connection
-            conn = DbQueryingMethods.create_connection(db_file="./django_rasa/db")
+            conn = DbQueryingMethods.create_connection(db_file=db_path)
             #? Query
             cur = conn.cursor()
             cur.execute(f'''SELECT * FROM Student WHERE user_name="{username}" and password="{password}"''')
@@ -62,7 +64,7 @@ class Queryspecialization(Action):
             return []
         
         
-        conn = DbQueryingMethods.create_connection(db_file="./django_rasa/db")
+        conn = DbQueryingMethods.create_connection(db_file=db_path)
 
         slot_value = tracker.get_slot("specialization")
         slot_name = "Faculty Name"
@@ -101,7 +103,7 @@ class QueryDegree(Action):
             dispatcher.utter_message(text="utter_authentication_required")
             return []
 
-        conn = DbQueryingMethodsDegree.create_connection(db_file="./django_rasa/db")
+        conn = DbQueryingMethodsDegree.create_connection(db_file=db_path)
 
         # get matching entries for resource type
         course_name_value = tracker.get_slot("course")
