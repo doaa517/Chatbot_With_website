@@ -1,4 +1,5 @@
 import logging
+from msilib.schema import Error
 from typing import Any, Text, Dict, List
 import os
 from rasa_sdk import Action, Tracker
@@ -17,8 +18,7 @@ from fuzzywuzzy import process
 
 
 logging.basicConfig(level=logging.DEBUG)
-
-db_path = r"./django_rassa/db.db"
+db_file="./actions/app.db"
 
 class AuthenticatedAction(Action):
     def name(self) -> Text:
@@ -31,17 +31,18 @@ class AuthenticatedAction(Action):
             username = tracker.get_slot("username")
             password = tracker.get_slot("password")
             #? Database connection
-            conn = DbQueryingMethods.create_connection(db_file=db_path)
+            conn = DbQueryingMethods.create_connection(db_file=db_file)
             #? Query
             cur = conn.cursor()
-            cur.execute(f'''SELECT * FROM Student WHERE user_name="{username}" and password="{password}"''')
+            cur.execute(f'''SELECT * FROM student WHERE user_name="{username}" and password="{password}"''')
             rows = cur.fetchall()
 
             if len(rows) > 0:
                 dispatcher.utter_message(template="utter_authenticated_successfully")
-                return [SlotSet("is_authenticated", True)]
+                return [SlotSet("is_authenticated", True), SlotSet("student_id", rows[0][0])]
+            
             else:
-                dispatcher.utter_message(text="utter_authentication_failure")
+                dispatcher.utter_message(template="utter_authentication_failure")
                     
             return []
 
@@ -59,12 +60,12 @@ class Queryspecialization(Action):
         specialization slot. Outputs an utterance to the user w/ the relevent 
         information for one of the returned rows.
         """
-        if tracker.slots.get("is_authenticated", False):
-            dispatcher.utter_message(text="utter_authentication_required")
+        if tracker.slots.get("is_authenticated", False) == False:
+            dispatcher.utter_message(template="utter_authentication_required")
             return []
         
         
-        conn = DbQueryingMethods.create_connection(db_file=db_path)
+        conn = DbQueryingMethods.create_connection(db_file=db_file)
 
         slot_value = tracker.get_slot("specialization")
         slot_name = "Faculty Name"
@@ -99,11 +100,11 @@ class QueryDegree(Action):
         type only, topic only in that order. Output is an utterance directly to the
         user with a randomly selected matching row.
         """
-        if tracker.slots.get("is_authenticated", False):
-            dispatcher.utter_message(text="utter_authentication_required")
+        if tracker.slots.get("is_authenticated", False) == False:
+            dispatcher.utter_message(template="utter_authentication_required")
             return []
 
-        conn = DbQueryingMethodsDegree.create_connection(db_file=db_path)
+        conn = DbQueryingMethodsDegree.create_connection(db_file=db_file)
 
         # get matching entries for resource type
         course_name_value = tracker.get_slot("course")
@@ -129,6 +130,8 @@ class QueryDegree(Action):
 
         # intersection of two queries
       #  topic_set = collections.Counter(query_results_topic)
+        topic_set = ""
+        query_results_topic =""
         type_set =  collections.Counter(query_results_type)
 
         query_results_overlap = list((topic_set & type_set).elements())
