@@ -332,7 +332,9 @@ responses:
 
   utter_authentication_failure:
   - text: Sorry, I wasn't able to authenticate you. Please check if your provided information is correct or not.
-
+  
+  utter_authentication_required:
+  - text: Login required!
 
 actions:
 - action_save_name
