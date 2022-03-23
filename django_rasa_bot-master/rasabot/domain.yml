@@ -337,7 +337,6 @@ responses:
   - text: Login required!
 
 actions:
-- action_save_name
 - query_degree
 - action_authenticated
 
