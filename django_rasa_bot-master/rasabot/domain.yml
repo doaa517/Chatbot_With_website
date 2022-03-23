@@ -74,31 +74,21 @@ slots:
     influence_conversation: true
     mappings:
       - type: custom
+  student_id:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
 
+  communication_mechanism:
+    type: categorical
+    values:
+      - phone number
+      - social media
+      - email
+      - account
+    influence_conversation: true
 
-# slots:
-#  username:
-#     initial_value: Human
-#     type: text
-#     mappings:
-#     - type: custom
-  
-#   specialization:
-#     type: text
-#     mappings:
-#     - type: custom
-#     initial_value: null
-#     #auto_fill: true
-#     influence_conversation: false
-
-
-#   course_name:
-#     type: text
-#     mappings:
-#     - type: custom
-#     initial_value: null
-#    # auto_fill: true
-#     influence_conversation: false
   
 responses:
   utter_connect_email: 

@@ -257,6 +257,31 @@ nlu:
     - [ASPU](university_name) contact
     - contacts
 
+- synonym: phone number
+  examples: |
+    - phone number
+    - number
+    - numbers
+    - Number
+    - our numbers
+
+- synonym: email
+  examples: |
+    - email
+    - hotmail
+    - gmail
+    - mail
+    - Email
+    - emails
+
+- synonym: account
+  examples: |
+    - account
+    - Account
+    - accounts
+    - our accounts
+    - university account
+
 
 - intent: students_affair
   examples: |
@@ -1082,3 +1107,12 @@ nlu:
     - username [yara](username)
     - password [yara123321](password)
     - username [yara](username) and password [yara123321](password)
+
+
+- regex: username
+  examples: |
+    - [a-zA-Z0-9]+
+
+- regex: password
+  examples: |
+    - [a-zA-Z0-9]+
