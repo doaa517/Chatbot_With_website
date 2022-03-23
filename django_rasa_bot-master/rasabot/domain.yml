@@ -88,6 +88,8 @@ slots:
       - email
       - account
     influence_conversation: true
+    mappings:
+      - type: custom
 
   
 responses:
