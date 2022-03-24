@@ -15,7 +15,7 @@ import collections
 import sqlite3
 import random
 from fuzzywuzzy import process
-
+from api import loginApi
 
 logging.basicConfig(level=logging.DEBUG)
 db_file="./actions/app.db"
@@ -30,16 +30,13 @@ class AuthenticatedAction(Action):
             ) -> List[Dict[Text, Any]]:
             username = tracker.get_slot("username")
             password = tracker.get_slot("password")
-            #? Database connection
-            conn = DbQueryingMethods.create_connection(db_file=db_file)
-            #? Query
-            cur = conn.cursor()
-            cur.execute(f'''SELECT * FROM student WHERE user_name="{username}" and password="{password}"''')
-            rows = cur.fetchall()
-
-            if len(rows) > 0:
+            
+            # Api call
+            user_id = loginApi(username, password)
+            
+            if user_id is not None:
                 dispatcher.utter_message(template="utter_authenticated_successfully")
-                return [SlotSet("is_authenticated", True), SlotSet("student_id", rows[0][0])]
+                return [SlotSet("is_authenticated", True), SlotSet("student_id",user_id)]
             
             else:
                 dispatcher.utter_message(template="utter_authentication_failure")
