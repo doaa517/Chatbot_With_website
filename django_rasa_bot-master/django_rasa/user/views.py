@@ -1,3 +1,4 @@
+import json
 from django.contrib.auth.views import LoginView, LogoutView
 from django.http import JsonResponse
 from django.shortcuts import render
@@ -11,10 +12,11 @@ from django.contrib.auth import authenticate
 
 class LoginApi(APIView):
     def post(self, request, format=None):
-        if request.POST['username'] =="" or request.POST['password'] == "":
+        data = json.loads(request.body)
+        if data['username'] is None or data['password'] is None:
             return JsonResponse({'detail' : "Bad request","error" : True, "data" : None}, status=400)
         
-        user = authenticate(username= request.POST['username'], password=request.POST['password'])
+        user = authenticate(username= data['username'], password= data['password'])
         if user is not None:
             return JsonResponse({"user_id": user.id})
         else:
