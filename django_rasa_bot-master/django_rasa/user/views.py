@@ -1,10 +1,24 @@
 from django.contrib.auth.views import LoginView, LogoutView
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 from user.models import Student
 from university.models import StudentDegree
 
+from rest_framework.views import APIView
+from django.contrib.auth import authenticate
+
+class LoginApi(APIView):
+    def post(self, request, format=None):
+        if request.POST['username'] =="" or request.POST['password'] == "":
+            return JsonResponse({'detail' : "Bad request","error" : True, "data" : None}, status=400)
+        
+        user = authenticate(username= request.POST['username'], password=request.POST['password'])
+        if user is not None:
+            return JsonResponse({"user_id": user.id})
+        else:
+            return JsonResponse({'detail' : "Unauthorized","error" : True, "data" : None}, status=401)
 
 class UserLogin(LoginView):
     template_name='user/login.html'
@@ -27,8 +41,6 @@ def profile(request):
     }
     
     return render(request, 'user/profile.html', ctx)
-    
-
 
 # class LoginView(InvalidFormMixin, BaseLoginView):
 #     """
