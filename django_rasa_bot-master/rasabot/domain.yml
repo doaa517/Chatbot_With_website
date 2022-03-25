@@ -34,7 +34,7 @@ intents:
   - out_of_scope
   - degree
   - inform
-  - authentication
+  - course_time
 
 
 entities:
@@ -52,6 +52,8 @@ entities:
   - language
   - product
   - password
+  - course_name
+
 
 slots:
   username:
@@ -331,6 +333,7 @@ responses:
 actions:
 - query_degree
 - action_authenticated
+- query_course_info
 
 forms:
   auth_form:

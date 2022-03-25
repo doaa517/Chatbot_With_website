@@ -1115,3 +1115,12 @@ nlu:
 - regex: password
   examples: |
     - [a-zA-Z0-9]+
+
+
+
+- intent: course_time
+  examples: |
+    - When does the [programming](course_name) lecture start? 
+    - In which class is a [programming](course_name) lecture given?
+    - In which class is a [machine learning](course_name) lecture given?
+    - Who is the lecturer who gives the [programming](course_name) course?
