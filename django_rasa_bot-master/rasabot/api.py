@@ -1,9 +1,9 @@
 import requests
 import json
 
-base_url = 'http://127.0.0.1:8000/user/login-api/'
 
 def loginApi(username, password):
+    base_url = 'http://127.0.0.1:8000/user/login-api/'
     data = {
         "username" : username,
         "password" : password
