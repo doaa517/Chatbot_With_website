@@ -20,5 +20,5 @@ def loginApi(username, password):
         return None
 
 
-
-print(loginApi('doaa','12345'))
+if __name__ == "__main__":
+    print(loginApi('doaa','12345'))

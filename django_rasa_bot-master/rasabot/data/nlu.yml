@@ -1,5 +1,4 @@
 version: "3.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-    - hey
     - hi bot
     - sup dude
     - yo bro
@@ -26,7 +24,6 @@ nlu:
     - hi [Al-Sham Private University](university_name)
     - hy [Al-Sham Private University](university_name) bot
     - hi [Al-Sham Private University](university_name) bot
-
 - intent: goodbye
   examples: |
     - cu
@@ -43,7 +40,6 @@ nlu:
     - farewell
     - good-bye
     - see you soon
-
 - intent: affirm
   examples: |
     - yes
@@ -62,9 +58,6 @@ nlu:
     - I dure do
     - I do
     - I agree
-
-
-
 - intent: deny
   examples: |
     - no
@@ -78,7 +71,6 @@ nlu:
     - I don't
     - nah
     - nope
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -88,11 +80,6 @@ nlu:
     - who are you?
     - what is your name?
     - what are you?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-
-
 - intent: how_to
   examples: |
     - my day was horrible
@@ -101,8 +88,6 @@ nlu:
     - what info can you provide me ?
     - how can you help me
     - help me
-
-
 - intent: about_us
   examples: |
     - why ASPU?
@@ -115,33 +100,28 @@ nlu:
     - [Al-Sham Private University](university_name)
     - why [Al-Sham Private University](university_name) university?
     - info about [ASPU](university_name)
-    - info about university 
-    - about university 
-    - about the university 
-    - can you tell me about the [ASPU](university_name) university 
+    - info about university
+    - about university
+    - about the university
+    - can you tell me about the [ASPU](university_name) university
     - info
     - about
-    - [ASPU](university_name)
-    - [Al-Sham Private University](university_name)
-    - info about [ASPU](university_name)
     - info about [Al-Sham Private University](university_name)
-    - info about 
+    - info about
     - Information about your university
     - Information about university
     - Info about your university
-
-
 - intent: scholarship
   examples: |
     - how can i get scholarship?
     - criteria for scholarship
     - scholarship
     - financial aid
-    - Can anyone guide me about scholarship? 
+    - Can anyone guide me about scholarship?
     - I need information about the scholarship procedure.
-    - I need guidance through the procedure of scholarship application ? 
-    - I need guidance for the application of scholarship. 
-    - What is the process of scholarship application ? 
+    - I need guidance through the procedure of scholarship application ?
+    - I need guidance for the application of scholarship.
+    - What is the process of scholarship application ?
     - I need information of the procedure of application of scholarship ?
     - what is the process of scholarship?
     - how can I get scholarship?
@@ -154,8 +134,6 @@ nlu:
     - how can I apply for financial aid
     - where can I apply for financial aid?
     - where can I apply for scholarship?
-
-
 - intent: college
   examples: |
     - colleges
@@ -183,13 +161,8 @@ nlu:
     - College of [Computer and Information Systems](specialization)
     - College of [Computer](specialization) and [Information Systems](specialization)
     - [medical](college_type) colleges
-    - Faculty of [medicine](specialization)
     - College of Applied [Medical Sciences](specialization)
     - Faculty of [Dentistry](specialization)
-
-
-
-
 - intent: branche
   examples: |
     - branch
@@ -221,17 +194,12 @@ nlu:
     - [ASPU](university_name) headqurater location
     - [Al-Sham Private University](university_name) headquarter
     - [Al-Sham Private University](university_name) headqurater location
-
-
-
 - intent: academic_period
   examples: |
     - When does the academic year of the university begin and end ?
     - What schedule of the academic year does the university follow ?
     - When does the academic year of the university start?
     - When does the academic year ends?
-
-
 - intent: connect_us
   examples: |
     - [phone number](communication_mechanism)
@@ -256,41 +224,12 @@ nlu:
     - [ASPU](university_name) contact [number](communication_mechanism)
     - [ASPU](university_name) contact
     - contacts
-
-- synonym: phone number
-  examples: |
-    - phone number
-    - number
-    - numbers
-    - Number
-    - our numbers
-
-- synonym: email
-  examples: |
-    - email
-    - hotmail
-    - gmail
-    - mail
-    - Email
-    - emails
-
-- synonym: account
-  examples: |
-    - account
-    - Account
-    - accounts
-    - our accounts
-    - university account
-
-
 - intent: students_affair
   examples: |
     - where is student affair office?
     - where is student affair office located?
     - student affair office
     - office of student affair
-
-
 - intent: hostel
   examples: |
     - [Al-Sham Private University](university_name) does provide hostel?
@@ -318,10 +257,6 @@ nlu:
     - place to chill
     - does [ASPU](university_name) provide free hostel ?
     - free hostel ?
-
-
-
-
 - intent: approved_system
   examples: |
     - approved system
@@ -336,8 +271,6 @@ nlu:
     - The number of hours required to graduate from the Faculty of [Medicine](specialization)
     - number of hours [Business Administration](specialization)
     - Do you use houres system?
-
-
 - intent: houres_system
   examples: |
     - Can you explain to me what the clock system means?
@@ -350,9 +283,6 @@ nlu:
     - Define houres system
     - Explanation of the clock system
     - Explanation of the houres system
-
-
-
 - intent: feedback_and_did_that_help
   examples: |
     - thanks
@@ -364,9 +294,6 @@ nlu:
     - Thx
     - This was very useful!
     - Amazing, thank u
-    - thank you
-
-
 - intent: financial_reward
   examples: |
     - Are there rewards for the student during his studies?
@@ -379,10 +306,6 @@ nlu:
     - What are the conditions for receiving the reward?
     - What is the amount of the financial reward?
     - How can I withdraw the financial reward?
-
-
-
-
 - intent: costs
   examples: |
     - Is registration in [ASPU](university_name) free?
@@ -397,8 +320,6 @@ nlu:
     - how can i get free education ?
     - how can i get scholarship ?
     - how can i get free education
-
-
 - intent: semester
   examples: |
     - semesters
@@ -407,17 +328,15 @@ nlu:
     - Number of semesters per year
     - Maximum number of semesters per year
     - Minimum number of semesters per year
-
-
 - intent: basic_semester
   examples: |
     - how many courses can we register in [first semester](semester) ?
     - how many courses can we opt in [first semester](semester) ?
     - course limit in [first semester](semester) ?
-    - courses in [first semester](semester) 
+    - courses in [first semester](semester)
     - Is the [first semester](semester) optional?
     - Is the [first semester](semester) compulsory?
-    - [first semester](semester) 
+    - [first semester](semester)
     - How many courses can be registered in the [first semester](semester) ?
     - How many courses can we enroll in in the [first semester](semester) ?
     - How many courses do we choose in the [first semester](semester) ?
@@ -433,15 +352,14 @@ nlu:
     - Minimum hours in [first semester](semester)
     - maximum hours in [first semester](semester)
     - The maximum hours in the [first semester](semester)
-    - [first semester](semester) 
     - What are the hours limit in the [first semester](semester) ?
     - how many courses can we register in [second semester](semester) ?
     - how many courses can we opt in [second semester](semester) ?
     - course limit in [second semester](semester) ?
-    - courses in [second semester](semester) 
+    - courses in [second semester](semester)
     - Is the [second semester](semester) optional?
     - Is the [second semester](semester) compulsory?
-    - [second semester](semester) 
+    - [second semester](semester)
     - How many courses can be registered in the [second semester](semester) ?
     - How many courses can we enroll in in the [second semester](semester) ?
     - How many courses do we choose in the [second semester](semester) ?
@@ -457,10 +375,7 @@ nlu:
     - Minimum hours in [second semester](semester)
     - maximum hours in [second semester](semester)
     - The maximum hours in the [second semester](semester)
-    - [second semester](semester) 
     - What are the hours limit in the [second semester](semester) ?
-
-
 - intent: summer_semester
   examples: |
     - how many courses can we register in summer semester?
@@ -488,9 +403,6 @@ nlu:
     - The maximum hours in the [summer](semester)
     - [summer](semester) semester
     - What are the hours limit in the [summer](semester) semester?
-
-
-
 - intent: register_new_student
   examples: |
     - register new student
@@ -501,9 +413,6 @@ nlu:
     - Registration mechanism
     - How do I register in [Al-Sham Private University](university_name) University?
     - How do I register in [ASPU](university_name) university
-
-
-
 - intent: academic_averages_new_std
   examples: |
     - The academic averages required to register in each college
@@ -519,10 +428,6 @@ nlu:
     - average rate required
     - academic rate
     - desired academic rate
-
-
-
-
 - intent: conversion_to_ASPU
   examples: |
     - Conversion from other universities to [Al-Sham Private University](university_name) University
@@ -543,13 +448,11 @@ nlu:
     - What procedure do the students go through who have earned credit from other insitutions and aspire to get admission in [ASPU](university_name) ?
     - Explain your policy for credits earned through different institution?
     - could I transfer my credit hours from other universities
-    - What is the information regarding transfer ? 
-    - What are the details about transfer ? 
-    - What are the updates in regards to the transfer ? 
-    - Is there any information available about the transfer ? 
+    - What is the information regarding transfer ?
+    - What are the details about transfer ?
+    - What are the updates in regards to the transfer ?
+    - Is there any information available about the transfer ?
     - How will the transfer take place ?
-
-
 - intent: graduate_studies
   examples: |
     - Graduate Studies
@@ -559,7 +462,7 @@ nlu:
     - Can I supplement postgraduate studies in your university?
     - What are the conditions for graduate studies in [ASPU](university_name)?
     - Postgraduate Conditions in [ASPU](university_name)
-    - postgraduate 
+    - postgraduate
     - Does your university have a [diploma](graduate_studies_type) ?
     - Does [Al-Sham Private University](university_name) University have a [diploma](graduate_studies_type) ?
     - Is there a [master](graduate_studies_type) in [ASPU](university_name) ?
@@ -567,8 +470,6 @@ nlu:
     - Does [ASPU](university_name) have a [Ph.D.](graduate_studies_type) ?
     - Does Al-Sham Private University have a [PhD](graduate_studies_type) ?
     - postgraduate in [ASPU](university_name)
-
-
 - intent: diploma
   examples: |
     - [diploma](graduate_studies_type)
@@ -580,9 +481,6 @@ nlu:
     - The [diploma](graduate_studies_type) is not free!
     - [diploma](graduate_studies_type) conditions
     - Conditions for applying for [diploma](graduate_studies_type) in [ASPU](university_name)
-
-
-
 - intent: masters
   examples: |
     - [Masters](graduate_studies_type)
@@ -594,9 +492,6 @@ nlu:
     - The [Masters](graduate_studies_type) is not free!
     - [master's](graduate_studies_type) conditions
     - Conditions for applying for [master's](graduate_studies_type) in [ASPU](university_name)
-
-
-
 - intent: PhD
   examples: |
     - [PhD](graduate_studies_type)
@@ -608,8 +503,6 @@ nlu:
     - The [PhD](graduate_studies_type) is not free!
     - [PhD](graduate_studies_type) conditions
     - Conditions for applying for [PhD](graduate_studies_type) in [ASPU](university_name)
-
-
 - intent: username
   examples: |
     - my name is [akhilesh](username)
@@ -664,7 +557,6 @@ nlu:
     - [hyam](username)
     - [kiran](username)
     - [anagha](username)
-    - [sameer](username)
     - [yogendra](username)
     - [sundous](username)
     - [lisa](username)
@@ -716,10 +608,6 @@ nlu:
     - [Hyacinth](username)
     - [Alexis](username)
     - [Gisela](username)
-
-
-
-
 - intent: out_of_scope
   examples: |
     - I am asking you an out of scope question
@@ -1062,15 +950,11 @@ nlu:
     - chgfhgh
     - [chinese](language) ok?
     - colder
-
 - intent: degree
   examples: |
     - What is my degree in [programming](course_name)
     - What is my degree in [history](course_name)
     - What is my degree in [machine learning](course_name)
-
-
-
 - intent: authentication
   examples: |
     - can you please make me login
@@ -1079,7 +963,6 @@ nlu:
     - login
     - authenticate
     - log me in
-
 - intent: inform
   examples: |
     - my username is [doaa](username)
@@ -1106,21 +989,59 @@ nlu:
     - username [yara](username)
     - password [yara123321](password)
     - username [yara](username) and password [yara123321](password)
-
-
-- regex: username
-  examples: |
-    - [a-zA-Z0-9]+
-
-- regex: password
-  examples: |
-    - [a-zA-Z0-9]+
-
-
-
+    - username is [doaa](username) and password is [12345](password)
 - intent: course_time
   examples: |
-    - When does the [programming](course_name) lecture start? 
+    - When does the [programming](course_name) lecture start?
     - In which class is a [programming](course_name) lecture given?
     - In which class is a [machine learning](course_name) lecture given?
     - Who is the lecturer who gives the [programming](course_name) course?
+    - when does [programming](course_name) lecture start?
+    - when does [programming](course_name) lecture start
+- synonym: phone number
+  examples: |
+    - phone number
+    - number
+    - numbers
+    - Number
+    - our numbers
+- synonym: email
+  examples: |
+    - email
+    - hotmail
+    - gmail
+    - mail
+    - Email
+    - emails
+- synonym: account
+  examples: |
+    - account
+    - Account
+    - accounts
+    - our accounts
+    - university account
+- regex: password
+  examples: |
+    - [a-zA-Z0-9]+
+- regex: username
+  examples: |
+    - [a-zA-Z0-9]+
+- lookup: course_name
+  examples: |
+    - programming
+    - machine learning
+    - computer vision
+    - nlp
+    - natural language processing
+    - math
+    - linear algabra
+    - discrete math
+    - data structure
+    - database
+    - db
+    - oop
+    - object oreinted programming
+    - multi media
+    - graphic design
+    - ai
+    - expert systems

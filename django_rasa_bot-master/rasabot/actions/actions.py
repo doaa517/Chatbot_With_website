@@ -318,22 +318,7 @@ class DbQueryingCourseMethods:
         top_match = process.extractOne(slot_value, column_values)
 
         return(top_match[0])
-"""
-    def select_by_slot(conn, slot_name, slot_value):
-        """
-        Query all rows in the tasks table
-        :param conn: the Connection object
-        :return:
-        """
-        cur = conn.cursor()
-        cur.execute(f'''SELECT * FROM Faculty
-                    WHERE {slot_name}="{slot_value}"''')
-
-        # return an array
-        rows = cur.fetchall()
-
-        return(rows)
-"""
+    
     def rows_info_as_text(rows):
         """
         Return one of the rows (randomly selcted) passed in 
@@ -346,6 +331,22 @@ class DbQueryingCourseMethods:
             for row in random.sample(rows, 1):
                 return f"Try the {(row[4]).lower()} {row[0]} by {row[1]}. You can find it at {row[2]}."
 
+"""
+    def select_by_slot(conn, slot_name, slot_value):
+        '''
+        Query all rows in the tasks table
+        :param conn: the Connection object
+        :return:
+        '''
+        cur = conn.cursor()
+        cur.execute(f'''SELECT * FROM Faculty
+                    WHERE {slot_name}="{slot_value}"''')
+
+        # return an array
+        rows = cur.fetchall()
+
+        return(rows)
+"""
 
 
 class QueryCourseInfo(Action):
@@ -370,7 +371,7 @@ class QueryCourseInfo(Action):
         conn = DbQueryingCourseMethods.create_connection(db_file=db_file)
 
         # get matching entries for resource type
-        course_name_value = tracker.get_slot("course")
+        course_name_value = tracker.get_slot("course_name")
         # make sure we don't pass None to our fuzzy matcher
         if course_name_value == None:
             course_name_value = " "

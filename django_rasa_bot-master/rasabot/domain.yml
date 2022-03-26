@@ -1,60 +1,59 @@
-version: "3.0"
-
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - bot_challenge
-  - how_to
-  - about_us
-  - scholarship
-  - college
-  - branche
-  - academic_period
-  - connect_us
-  - students_affair
-  - hostel
-  - approved_system
-  - houres_system
-  - feedback_and_did_that_help
-  - financial_reward
-  - costs
-  - semester
-  - basic_semester
-  - summer_semester
-  - register_new_student
-  - academic_averages_new_std
-  - conversion_to_ASPU
-  - graduate_studies
-  - diploma
-  - masters
-  - PhD
-  - username
-  - out_of_scope
-  - degree
-  - inform
-  - course_time
-
-
+- course_time
+- authentication
+- inform
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- how_to
+- about_us
+- scholarship
+- college
+- branche
+- academic_period
+- connect_us
+- students_affair
+- hostel
+- approved_system
+- houres_system
+- feedback_and_did_that_help
+- financial_reward
+- costs
+- semester
+- basic_semester
+- summer_semester
+- register_new_student
+- academic_averages_new_std
+- conversion_to_ASPU
+- graduate_studies
+- diploma
+- masters
+- PhD
+- username
+- out_of_scope
+- degree
 entities:
-  - specialization
-  - college_type
-  - location
-  - communication_mechanism
-  - student_gender
-  - student_type
-  - semester
-  - graduate_studies_type
-  - username
-  - name
-  - company
-  - language
-  - product
-  - password
-  - course_name
-
-
+- college_type
+- communication_mechanism
+- company
+- course_name
+- graduate_studies_type
+- language
+- location
+- name
+- password
+- product
+- semester
+- specialization
+- student_gender
+- student_type
+- username
 slots:
   username:
     type: text
@@ -62,309 +61,171 @@ slots:
     mappings:
     - type: from_entity
       entity: username
-
   password:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
       entity: password
-
   is_authenticated:
     type: bool
     initial_value: false
     influence_conversation: true
     mappings:
-      - type: custom
-  
+    - type: custom
   student_id:
     type: text
     influence_conversation: true
     mappings:
-      - type: custom
-
+    - type: custom
   course_name:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
       entity: course_name
-
   communication_mechanism:
     type: categorical
-    values:
-      - phone number
-      - social media
-      - email
-      - account
     influence_conversation: true
     mappings:
-      - type: custom
-
-  
+    - type: custom
+    values:
+    - phone number
+    - social media
+    - email
+    - account
 responses:
-  utter_connect_email: 
-  - text: "You can send an email to the following email: ( info@aspu.edu.sy) "
-
-
+  utter_connect_email:
+  - text: 'You can send an email to the following email: ( info@aspu.edu.sy) '
   utter_greet:
-  - text: "Hey, I am a chatbot assistant for ASPU. I can help you answer your questions about Al-Sham Private University, how can I help you{username}?"
-
-
+  - text: Hey, I am a chatbot assistant for ASPU. I can help you answer your questions about Al-Sham Private University, how can I help you{username}?
   utter_how_to:
-  - text: "You can ask any question about Al-Sham Private University, ask me to be able to help you, such as the mechanism for registering a new student, the university’s branches, the way to communicate with us and many other questions, ask your question."
-
-
+  - text: You can ask any question about Al-Sham Private University, ask me to be able to help you, such as the mechanism for registering a new student, the university’s branches, the way to communicate with us and many other questions, ask your question.
   utter_affirmation:
-  - text: "Excellent, I'm glad I was able to help you"
-
+  - text: Excellent, I'm glad I was able to help you
   utter_deny:
-  - text: "Oh, I'm sorry, you can ask your question in a different form so that I can help you"
-  - text: "Sorry, I didn't get that 🤷. Could you please rephrase?"
-
-
+  - text: Oh, I'm sorry, you can ask your question in a different form so that I can help you
+  - text: Sorry, I didn't get that 🤷. Could you please rephrase?
   utter_about:
-  - text: "Al-Sham Private University was established by Legislative Decree No. 97 of 7/28/2011 to be a leading institution in higher education, a tributary of it in advanced and advanced scientific fields, and in order to achieve its goals, it communicates with various government and private sectors, with the aim of contributing to the sustainable development of these sectors, It is looking forward to meeting the needs of the labor market with specialized and effective scientific frameworks in building and developing the national economy. "
-
-
-
+  - text: 'Al-Sham Private University was established by Legislative Decree No. 97 of 7/28/2011 to be a leading institution in higher education, a tributary of it in advanced and advanced scientific fields, and in order to achieve its goals, it communicates with various government and private sectors, with the aim of contributing to the sustainable development of these sectors, It is looking forward to meeting the needs of the labor market with specialized and effective scientific frameworks in building and developing the national economy. '
   utter_scholar:
-  - text: "There are scholarships for students with high academic averages, according to comparisons conducted by the Ministry of Higher Education, and several seats for the sons of martyrs."
-  - text: "For more details: http://www.aspu.edu.sy/ar/scholarship"
-
-
+  - text: There are scholarships for students with high academic averages, according to comparisons conducted by the Ministry of Higher Education, and several seats for the sons of martyrs.
+  - text: 'For more details: http://www.aspu.edu.sy/ar/scholarship'
   utter_college:
-    - text: "The university has several faculties: \
-      \ 1- Collage of Law \ 
-      \ 2 - College of Engineering \ 
-      \ 3- Medical colleges \ 
-      \ 4 - College of Diplomatic Relations \
-      \ 5- College of Business Administration \ 
-
-    \ Within each college there are many specializations"
-
-
+  - text: |-
+      The university has several faculties:  1- Collage of Law    2 - College of Engineering    3- Medical colleges    4 - College of Diplomatic Relations  5- College of Business Administration  
+       Within each college there are many specializations
   utter_computerscience_college:
-  - text: "Yes, we have the College of Computer Engineering, and the required academic averages vary according to each semester, for more details, please contact us."
-
-
+  - text: Yes, we have the College of Computer Engineering, and the required academic averages vary according to each semester, for more details, please contact us.
   utter_medical_college:
-  - text: "Yes, we have a medical college, and the required tuition rates vary according to each semester. For more details, please contact us."
-
+  - text: Yes, we have a medical college, and the required tuition rates vary according to each semester. For more details, please contact us.
   utter_Law_college:
-  - text: "Yes, we have a law college, and the required tuition rates vary according to each semester. For more details, please contact us."
-
-
+  - text: Yes, we have a law college, and the required tuition rates vary according to each semester. For more details, please contact us.
   utter_Business_college:
-  - text: "Yes, we have a Business Administration college, and the required tuition rates vary according to each semester. For more details, please contact us."
-
+  - text: Yes, we have a Business Administration college, and the required tuition rates vary according to each semester. For more details, please contact us.
   utter_houres_system:
-  - text: "The credit hour system is the entitlement that the student obtains in return for studying a course or subject at the school or university and is used as a measure of the student’s eligibility for graduation if he completes a certain number of credit hours. \
-      \ The credit-hour system, in which the academic year is divided into two semesters - the first semester (fall) and the second semester (spring) - in each semester, the student usually studies anywhere from 12 to 19 credit hours or from four to six courses, and usually consists of One semester consists of three credit hours, i.e. three hours per week for four months. The credit hour system allows students to distribute the university and college requirements over the years of their study. It also allows them to study with students from previous and subsequent years, and enables them to study the main specialization and specialization If a student fails a course, he must repeat that course on his own if it is a compulsory course, or study an alternative course if it is an elective course."
-
-
-
+  - text: The credit hour system is the entitlement that the student obtains in return for studying a course or subject at the school or university and is used as a measure of the student’s eligibility for graduation if he completes a certain number of credit hours.  The credit-hour system, in which the academic year is divided into two semesters - the first semester (fall) and the second semester (spring) - in each semester, the student usually studies anywhere from 12 to 19 credit hours or from four to six courses, and usually consists of One semester consists of three credit hours, i.e. three hours per week for four months. The credit hour system allows students to distribute the university and college requirements over the years of their study. It also allows them to study with students from previous and subsequent years, and enables them to study the main specialization and specialization If a student fails a course, he must repeat that course on his own if it is a compulsory course, or study an alternative course if it is an elective course.
   utter_branches:
-  - text: "In Damascus Al Mazraa College of Dentistry & Al Tal College of Medicine, Pharmacy and Engineering & Al Baramkeh Headquarters and the rest of the colleges \
-      \ If you want to view the location, please click on the following link: http://www.aspu.edu.sy/ar/contact-us"
-
-
+  - text: 'In Damascus Al Mazraa College of Dentistry & Al Tal College of Medicine, Pharmacy and Engineering & Al Baramkeh Headquarters and the rest of the colleges  If you want to view the location, please click on the following link: http://www.aspu.edu.sy/ar/contact-us'
   utter_goodbye:
-  - text: "Bye, nice to meet you{username}"
-
-
+  - text: Bye, nice to meet you{username}
   utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_register_new_std:
-  - text: "In each semester, the university sets new acceptance rates for students. To view the required rates and the documents required for registration, please click on the following link: http://www.aspu.edu.sy/ar/admission-rules"
-  
-
+  - text: 'In each semester, the university sets new acceptance rates for students. To view the required rates and the documents required for registration, please click on the following link: http://www.aspu.edu.sy/ar/admission-rules'
   utter_avg_new_std:
-  - text: "In each semester, the university sets new acceptance rates for students for each college. To view the rates required for registration, please click on the following link: http://www.aspu.edu.sy/ar/admission-rules"
-  
+  - text: 'In each semester, the university sets new acceptance rates for students for each college. To view the rates required for registration, please click on the following link: http://www.aspu.edu.sy/ar/admission-rules'
   utter_conversion:
-  - text: "It is possible to transfer from another university to our university provided that the certificate is recognized, and then it is equalized with the subjects according to the study plan of the college."
-
+  - text: It is possible to transfer from another university to our university provided that the certificate is recognized, and then it is equalized with the subjects according to the study plan of the college.
   utter_semesters:
-  - text: "In the academic year there are 3 semesters, which are:\
-      \ The first semester (Fall) is mandatory: its duration is 16 to 19 weeks, including the exam period.
-      \ The second semester (Spring) is mandatory: its duration is 16 to 19 weeks, including the exam period.
-      \ Third semester (Summer) Optional: Duration of 8 weeks, including the exam period."
-
+  - text: 'In the academic year there are 3 semesters, which are: The first semester (Fall) is mandatory: its duration is 16 to 19 weeks, including the exam period.  The second semester (Spring) is mandatory: its duration is 16 to 19 weeks, including the exam period.  Third semester (Summer) Optional: Duration of 8 weeks, including the exam period.'
   utter_basic_semesters:
-  - text: "The student registers (12 to 18) credit hours in each semester, and the distinguished student can shorten the study period to graduate within a period less than the specified period for graduation, by registering more hours of up to 21"
-
+  - text: The student registers (12 to 18) credit hours in each semester, and the distinguished student can shorten the study period to graduate within a period less than the specified period for graduation, by registering more hours of up to 21
   utter_summer_semester:
-  - text: "The student registers (2 to 9) credit hours in the summer semester, which is an optional semester, and the distinguished student can register more hours, up to 12 hours."
-
+  - text: The student registers (2 to 9) credit hours in the summer semester, which is an optional semester, and the distinguished student can register more hours, up to 12 hours.
   utter_ask_rephrase:
-  - text: "Sorry, I didn't get that 🤷. Could you please rephrase?"
-
-
+  - text: Sorry, I didn't get that 🤷. Could you please rephrase?
   utter_approved_system:
-  - text: "We adopt the hours system, and each college has a designated number of hours that must be exceeded in order to graduate.\
-      \ The College of Informatics Engineering has 166 hours, College of Dentistry 191, College of Human Medicine 253, College of Pharmacy 175,\
-      \ College of Administrative Sciences 139,College of law 139, College of International Relations and Diplomacy 135."
-
-
+  - text: We adopt the hours system, and each college has a designated number of hours that must be exceeded in order to graduate. The College of Informatics Engineering has 166 hours, College of Dentistry 191, College of Human Medicine 253, College of Pharmacy 175, College of Administrative Sciences 139,College of law 139, College of International Relations and Diplomacy 135.
   utter_computerscience_approved_system:
-  - text: "The College of Informatics Engineering requires the student to pass its 166 hours"
-
-
-
+  - text: The College of Informatics Engineering requires the student to pass its 166 hours
   utter_Law_approved_system:
-  - text: "Faculty of Law, the student needs to pass the number of hours 139"
-
+  - text: Faculty of Law, the student needs to pass the number of hours 139
   utter_medical_approved_system:
-  - text: "Medical Colleges:\
-      \ The College of Human Medicine requires the student to pass its 253 hours & the College of Dentistry the student needs to pass its 191 hours & the College of Pharmacy the student needs to pass its 175 hours"
-
+  - text: 'Medical Colleges: The College of Human Medicine requires the student to pass its 253 hours & the College of Dentistry the student needs to pass its 191 hours & the College of Pharmacy the student needs to pass its 175 hours'
   utter_Business_approved_system:
-  - text: "The College of Business Administration requires the student to pass 139 hours"
-
+  - text: The College of Business Administration requires the student to pass 139 hours
   utter_feedback:
-  - text: "It was my pleasure to help you, ask what you want at any time you are welcome"
-  
+  - text: It was my pleasure to help you, ask what you want at any time you are welcome
   utter_financial_reward:
-  - text: "There are rewards (financial discounts) for each student according to his average"
-  - text: "For more details: http://www.aspu.edu.sy/ar/scholarship"
-
+  - text: There are rewards (financial discounts) for each student according to his average
+  - text: 'For more details: http://www.aspu.edu.sy/ar/scholarship'
   utter_cost:
-  - text: "Registration in the university is not free except for scholarship holders, and the cost per hour is determined according to whether the person is Syrian or not and according to each college, for more details: http://www.aspu.edu.sy/ar/Tuition-Fees"
-
-
-
+  - text: 'Registration in the university is not free except for scholarship holders, and the cost per hour is determined according to whether the person is Syrian or not and according to each college, for more details: http://www.aspu.edu.sy/ar/Tuition-Fees'
   utter_students_affair:
-  - text: "In each headquarters (branch) there is a student affairs, you can inquire here to have your questions answered."
-
+  - text: In each headquarters (branch) there is a student affairs, you can inquire here to have your questions answered.
   utter_hostel:
-  - text: "We have a hostel for university students, in Lattakia and Al-Tal."
-
+  - text: We have a hostel for university students, in Lattakia and Al-Tal.
   utter_girl_hostel:
-  - text: "We have a hostel for female university students."
-
+  - text: We have a hostel for female university students.
   utter_boy_hostel:
-  - text: "We have a hostel for male university students."
-
-
+  - text: We have a hostel for male university students.
   utter_graduate_studies:
-  - text: "Our university does not have any postgraduate studies, we only have a bachelor's degree"
-
-
+  - text: Our university does not have any postgraduate studies, we only have a bachelor's degree
   utter_graduate_studies_diploma:
-  - text: "Our university does not have any postgraduate studies, we only have a bachelor's degree"
-
-
+  - text: Our university does not have any postgraduate studies, we only have a bachelor's degree
   utter_graduate_studies_master:
-  - text: "Our university does not have any postgraduate studies, we only have a bachelor's degree"
-
-
+  - text: Our university does not have any postgraduate studies, we only have a bachelor's degree
   utter_graduate_studies_PhD:
-  - text: "Our university does not have any postgraduate studies, we only have a bachelor's degree"
-
+  - text: Our university does not have any postgraduate studies, we only have a bachelor's degree
   utter_diploma:
-  - text: "Our university does not have any postgraduate studies, we only have a bachelor's degree"
-
+  - text: Our university does not have any postgraduate studies, we only have a bachelor's degree
   utter_masters:
-  - text: "Our university does not have any postgraduate studies, we only have a bachelor's degree"
-
+  - text: Our university does not have any postgraduate studies, we only have a bachelor's degree
   utter_PhD:
-  - text: "Our university does not have any postgraduate studies, we only have a bachelor's degree"
-
-
+  - text: Our university does not have any postgraduate studies, we only have a bachelor's degree
   utter_iamabot:
-  - text: "I'm a bot, powered by female computer engineering student (Doaa), designed to answer all queries related to ASPU."
-
-
+  - text: I'm a bot, powered by female computer engineering student (Doaa), designed to answer all queries related to ASPU.
   utter_name:
-  - text: "welcome {username}"
-
-
-
+  - text: welcome {username}
   utter_branches_Damascus:
-  - text: "We have several branches in Damascus (Al-Mazraa & Al-Tal & Al-Baramkeh)."
-
-
-
+  - text: We have several branches in Damascus (Al-Mazraa & Al-Tal & Al-Baramkeh).
   utter_branches_Latakia:
-  - text: "We have several branches in Lattakia (Al-Saliba & Southern Corniche)."
-
+  - text: We have several branches in Lattakia (Al-Saliba & Southern Corniche).
   utter_branches_Aleppo:
-  - text: "We do not have any branch in Aleppo"
-
-
-
+  - text: We do not have any branch in Aleppo
   utter_period:
-  - text: "In this year 2022:      \t      The first semester will start on 01/25/2022 \n
-      The start of the second semester will be 03/22/2022 \n
-      The beginning of the summer semester will be 07/08/2022"
-
-
-
+  - text: |-
+      In this year 2022:      	      The first semester will start on 01/25/2022 
+       The start of the second semester will be 03/22/2022 
+       The beginning of the summer semester will be 07/08/2022
   utter_connect_us:
-  - text: "You can contact us by visiting us at our headquarters in Damascus:
-      Damascus - Al-Baramkeh - Musab Bani Al-Omair Street - next to Tishreen Sports City http://www.aspu.edu.sy/ar/contact-us & \
-      \ or in Latakia in Saliba. \
-      \  or by calling us on one of the following numbers: +963 112153360 / +963112066 or sending an email to the following email: info@aspu.edu.sy,\ 
-      \ or follow us on social media: http://www.aspu.edu.sy/ar/contact-us "
-
-
-  utter_connect_social_media: 
-  - text: "Alsham.University@facebook.com"
- 
-  utter_connect_loction: 
-  - text: "You can contact us by visiting us at our headquarters in Damascus: \
-      Damascus - Al-Baramkeh - Musab Bani Al-Omair Street - next to Tishreen Sports City http://www.aspu.edu.sy/ar/contact-us & \
-      \ or in Latakia in Saliba."
-
-
+  - text: 'You can contact us by visiting us at our headquarters in Damascus: Damascus - Al-Baramkeh - Musab Bani Al-Omair Street - next to Tishreen Sports City http://www.aspu.edu.sy/ar/contact-us &  or in Latakia in Saliba.   or by calling us on one of the following numbers: +963 112153360 / +963112066 or sending an email to the following email: info@aspu.edu.sy,   or follow us on social media: http://www.aspu.edu.sy/ar/contact-us '
+  utter_connect_social_media:
+  - text: Alsham.University@facebook.com
+  utter_connect_loction:
+  - text: 'You can contact us by visiting us at our headquarters in Damascus: Damascus - Al-Baramkeh - Musab Bani Al-Omair Street - next to Tishreen Sports City http://www.aspu.edu.sy/ar/contact-us &  or in Latakia in Saliba.'
   utter_connect_phone:
-  - text: "Damascus: +963 112153360 / +963112066 \
-      \ Latakia: 2566411-041 / 2593412-041"
-
+  - text: 'Damascus: +963 112153360 / +963112066  Latakia: 2566411-041 / 2593412-041'
   utter_ask_username:
   - text: Can you please provide me your username?
-
   utter_ask_password:
   - text: Thank you for providing username, can you please provide me your password?
-
   utter_authenticated_successfully:
   - text: Thank {username} for providing information, I have authenticated you sucessfully.
-
   utter_authentication_failure:
   - text: Sorry, I wasn't able to authenticate you. Please check if your provided information is correct or not.
-  
   utter_authentication_required:
   - text: Login required!
-
 actions:
-- query_degree
 - action_authenticated
 - query_course_info
-
+- query_degree
 forms:
   auth_form:
     required_slots:
-        - username
-        - password
-
+    - username
+    - password
   course_time_form:
     required_slots:
-        - course_name
-
-
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 60
-
-
-
-
-
-# config:
-#   store_entities_as_slots: true
-# session_config:
-#   session_expiration_time: 60
-#   carry_over_slots_to_new_session: true
-
+    - course_name
