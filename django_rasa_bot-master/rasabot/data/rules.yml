@@ -22,3 +22,21 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_authenticated
+
+- rule: Course time
+  steps:
+  - intent: course_time
+  - action: course_time_form
+  - active_loop: course_time_form
+
+- rule: course submit and deactivate course_time_form
+  condition:
+  - active_loop: course_time_form
+  steps:
+  - action: course_time_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: query_course_info
+
+

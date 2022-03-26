@@ -69,18 +69,26 @@ slots:
     mappings:
     - type: from_entity
       entity: password
-  
+
   is_authenticated:
     type: bool
     initial_value: false
     influence_conversation: true
     mappings:
       - type: custom
+  
   student_id:
     type: text
     influence_conversation: true
     mappings:
       - type: custom
+
+  course_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: course_name
 
   communication_mechanism:
     type: categorical
@@ -340,6 +348,10 @@ forms:
     required_slots:
         - username
         - password
+
+  course_time_form:
+    required_slots:
+        - course_name
 
 
 session_config:
