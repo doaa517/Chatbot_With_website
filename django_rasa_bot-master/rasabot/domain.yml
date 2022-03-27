@@ -219,13 +219,13 @@ responses:
   - text: Login required!
 actions:
 - action_authenticated
-- query_course_info
+#- query_course_info
 - query_degree
 forms:
   auth_form:
     required_slots:
     - username
     - password
-  course_time_form:
-    required_slots:
-    - course_name
+  # course_time_form:
+  #   required_slots:
+  #   - course_name
