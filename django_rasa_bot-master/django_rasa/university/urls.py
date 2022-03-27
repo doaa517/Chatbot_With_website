@@ -7,4 +7,6 @@ urlpatterns = [
     path('branches/', views.branches, name='branches'),
     path('faculties/', views.faculties, name='faculties'),
     path('courses/', views.courses, name='courses'),
+    
+    path('degree-api/', DegreeApi.as_view(), name='degree-api'),
 ]
