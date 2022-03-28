@@ -513,7 +513,7 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
-  - action: query_course_info
+  - action: action_class_info
   - intent: authentication
   - action: auth_form
   - active_loop: auth_form
