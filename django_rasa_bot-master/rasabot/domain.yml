@@ -3,7 +3,7 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- course_time
+- class_time
 - authentication
 - inform
 - greet
@@ -219,13 +219,17 @@ responses:
   - text: Login required!
 actions:
 - action_authenticated
-#- query_course_info
-- query_degree
+- action_class_info
+- action_course_degree
+
 forms:
   auth_form:
     required_slots:
     - username
     - password
-  # course_time_form:
-  #   required_slots:
-  #   - course_name
+  class_time_form:
+    required_slots:
+    - course_name
+  course_degree_form:
+    required_slots:
+    - course_name
