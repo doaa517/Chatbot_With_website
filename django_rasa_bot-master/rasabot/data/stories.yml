@@ -501,13 +501,6 @@ stories:
 
 
 
-
-- story: student degree
-  steps:
-  - intent: degree
-  - action: action_course_degree
-
-
 - story: interactive_story_1
   steps:
   - intent: class_time

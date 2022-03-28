@@ -25,7 +25,7 @@ rules:
 
 - rule: class info
   steps:
-  - intent: course_time
+  - intent: class_time
   - action: class_time_form
   - active_loop: class_time_form
 
@@ -55,4 +55,20 @@ rules:
     - requested_slot: null
   - action: action_course_degree
 
+
+- rule: complaint form
+  steps:
+  - intent: complaint
+  - action: complaint_form
+  - active_loop: complaint_form
+
+- rule: complaint submit and deactivate form
+  condition:
+  - active_loop: complaint_form
+  steps:
+  - action: complaint_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_complaint
 

@@ -3,6 +3,7 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- complaint
 - class_time
 - authentication
 - inform
@@ -54,6 +55,7 @@ entities:
 - student_gender
 - student_type
 - username
+- complaint
 slots:
   username:
     type: text
@@ -94,6 +96,12 @@ slots:
     - social media
     - email
     - account
+  complaint:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: complaint
 responses:
   utter_connect_email:
   - text: 'You can send an email to the following email: ( info@aspu.edu.sy) '
@@ -217,10 +225,16 @@ responses:
   - text: Sorry, I wasn't able to authenticate you. Please check if your provided information is correct or not.
   utter_authentication_required:
   - text: Login required!
+  utter_ask_complaint:
+  - text: Can you tell me about the complaint?
+  utter_complaint_send_successfully:
+  - text: Thank {username} for providing us with your complaint. Your complaint has been sent to the manager's email.
+
 actions:
 - action_authenticated
 - action_class_info
 - action_course_degree
+- action_complaint
 
 forms:
   auth_form:
@@ -233,3 +247,6 @@ forms:
   course_degree_form:
     required_slots:
     - course_name
+  complaint_form:
+    required_slots:
+    - complaint

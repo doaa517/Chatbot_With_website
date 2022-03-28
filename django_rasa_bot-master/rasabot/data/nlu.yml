@@ -998,6 +998,13 @@ nlu:
     - Who is the lecturer who gives the [programming](course_name) course?
     - when does [programming](course_name) lecture start?
     - when does [programming](course_name) lecture start
+- intent: complaint
+  examples: |
+    - the complaint is that [the educational content of the Arabic language is very bad](complaint)
+    - my complaint is that [the programming exam was bad, the questions were not clear](complaint)
+    - the complaint is [programming exam was bad, the questions were not clear](complaint)
+    - [the number of students in this class room is large, is it possible to secure an additional class room](complaint)
+  
 - synonym: phone number
   examples: |
     - phone number

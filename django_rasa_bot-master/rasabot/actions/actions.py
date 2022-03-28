@@ -55,6 +55,7 @@ class CourseDegreeAction(Action):
         else:
             dispatcher.utter_message(text="You are not in the class of there is no degree")        
         return []
+
 class ClassInfoAction(Action):
     def name(self) -> Text:
         return "action_class_info"
@@ -84,3 +85,28 @@ class ClassInfoAction(Action):
         else:
             dispatcher.utter_message(text="Sorry, but i didnt find and results!")         
         return []
+
+class ComplaintAction(Action):
+    def name(self) -> Text:
+        return "action_complaint"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]
+            ) -> List[Dict[Text, Any]]:
+        
+        if tracker.slots.get("is_authenticated", False) == False:
+            dispatcher.utter_message(template="utter_authentication_required")
+            return []    
+        
+        username = tracker.get_slot("username")
+        complaint = tracker.get_slot("complaint")    
+        
+        if complaint is not None:    
+            dispatcher.utter_message(template="utter_complaint_send_successfully")
+        
+        else:
+            dispatcher.utter_message(text="Sorry, didn't catchup your complaint")
+            
+        return [SlotSet("complaint", None)]
+        
