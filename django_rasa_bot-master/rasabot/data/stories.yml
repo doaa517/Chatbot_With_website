@@ -570,3 +570,50 @@ stories:
     entities:
     - course_name: arabic
   - action: action_course_degree
+
+- story: interactive_story_3
+  steps:
+  - intent: complaint
+    entities:
+    - complaint: the educational content of the Arabic language is very bad
+  - slot_was_set:
+    - complaint: the educational content of the Arabic language is very bad
+  - action: complaint_form
+  - active_loop: complaint_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_complaint
+  - intent: authentication
+  - action: auth_form
+  - active_loop: auth_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - username: doaa
+  - slot_was_set:
+    - password: '12345'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_authenticated
+  - slot_was_set:
+    - is_authenticated: true
+  - slot_was_set:
+    - student_id: doaa
+  - intent: complaint
+    entities:
+    - complaint: the educational content of the Arabic language is very bad
+  - action: utter_scholar
+  - action: action_complaint
+  - slot_was_set:
+    - complaint: null
+  - intent: complaint
+    entities:
+    - complaint: the programming exam was bad
+    - complaint: the questions were not clear
+  - slot_was_set:
+    - complaint: the questions were not clear
+  - action: action_complaint
+  - slot_was_set:
+    - complaint: null

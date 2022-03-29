@@ -990,6 +990,7 @@ nlu:
     - password [yara123321](password)
     - username [yara](username) and password [yara123321](password)
     - username is [doaa](username) and password is [12345](password)
+    - my username is [doaa](username) and my password is [12345](password)
 - intent: class_time
   examples: |
     - When does the [programming](course_name) lecture start?
@@ -1004,7 +1005,9 @@ nlu:
     - my complaint is that [the programming exam was bad, the questions were not clear](complaint)
     - the complaint is [programming exam was bad, the questions were not clear](complaint)
     - [the number of students in this class room is large, is it possible to secure an additional class room](complaint)
-  
+    - the complaint is that [the educational content of the Arabic language is very bad](complaint)
+    - the complaint is that [the educational content of the Arabic language is very bad](complaint)
+    - my complaint is that [the programming exam was bad](complaint), [the questions were not clear](complaint)
 - synonym: phone number
   examples: |
     - phone number

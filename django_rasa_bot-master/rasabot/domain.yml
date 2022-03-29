@@ -3,10 +3,10 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- complaint
-- class_time
-- authentication
 - inform
+- complaint
+- authentication
+- class_time
 - greet
 - goodbye
 - affirm
@@ -43,6 +43,7 @@ entities:
 - college_type
 - communication_mechanism
 - company
+- complaint
 - course_name
 - graduate_studies_type
 - language
@@ -55,7 +56,6 @@ entities:
 - student_gender
 - student_type
 - username
-- complaint
 slots:
   username:
     type: text
@@ -229,13 +229,12 @@ responses:
   - text: Can you tell me about the complaint?
   utter_complaint_send_successfully:
   - text: Thank {username} for providing us with your complaint. Your complaint has been sent to the manager's email.
-
 actions:
 - action_authenticated
 - action_class_info
-- action_course_degree
 - action_complaint
-
+- action_course_degree
+- utter_scholar
 forms:
   auth_form:
     required_slots:
