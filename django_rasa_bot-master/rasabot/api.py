@@ -75,7 +75,7 @@ def classInfoApi(course_name):
     if data.status_code == 200:
         data = json.loads(data.text)
 
-        return data['course_title'], data['class_title'], data['class_day'], data['start_time'], data['end_time'], data['lecturer']
+        return data
     else:
         return None
 
