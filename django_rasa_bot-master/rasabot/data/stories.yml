@@ -598,3 +598,144 @@ stories:
     - course_name: programming
   - action: action_class_info
 
+
+- story: course degree 1
+  steps:
+  - intent: degree
+    entities:
+    - course_name: arabic
+  - slot_was_set:
+    - course_name: arabic
+  - action: course_degree_form
+  - active_loop: course_degree_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_course_degree
+  - intent: authentication
+  - action: auth_form
+  - active_loop: auth_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - username: doaa
+  - slot_was_set:
+    - password: '12345'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_authenticated
+  - slot_was_set:
+    - is_authenticated: true
+  - slot_was_set:
+    - student_id: '1'
+  - intent: degree
+    entities:
+    - course_name: arabic
+  - action: action_course_degree
+
+
+- story: course degree 2
+  steps:
+  - intent: degree
+    entities:
+    - course_name: arabic
+  - slot_was_set:
+    - course_name: arabic
+  - action: course_degree_form
+  - active_loop: course_degree_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_course_degree
+  - intent: authentication
+  - action: auth_form
+  - active_loop: auth_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - username: doaa
+  - slot_was_set:
+    - password: '12345'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_authenticated
+  - slot_was_set:
+    - is_authenticated: true
+  - slot_was_set:
+    - student_id: '1'
+  - intent: degree
+    entities:
+    - course_name: arabic
+  - action: action_course_degree
+  - intent: degree
+    entities:
+    - course_name: programming
+  - slot_was_set:
+    - course_name: arabic
+  - action: course_degree_form
+  - active_loop: course_degree_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_course_degree
+
+- story: course degree 3
+  steps:
+  - intent: degree
+    entities:
+    - course_name: arabic
+  - slot_was_set:
+    - course_name: arabic
+  - action: course_degree_form
+  - active_loop: course_degree_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_course_degree
+  - intent: authentication
+  - action: auth_form
+  - active_loop: auth_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - username: doaa
+  - slot_was_set:
+    - password: '12345'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_authenticated
+  - slot_was_set:
+    - is_authenticated: true
+  - slot_was_set:
+    - student_id: '1'
+  - intent: degree
+    entities:
+    - course_name: arabic
+  - action: action_course_degree
+  - intent: degree
+    entities:
+    - course_name: programming
+  - slot_was_set:
+    - course_name: arabic
+  - action: course_degree_form
+  - active_loop: course_degree_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_course_degree
+  - intent: degree
+    entities:
+    - course_name: machine learning
+  - slot_was_set:
+    - course_name: arabic
+  - action: course_degree_form
+  - active_loop: course_degree_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_course_degree
+
+  
