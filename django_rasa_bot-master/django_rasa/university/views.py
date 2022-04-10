@@ -38,19 +38,21 @@ class ClassInfoApi(APIView):
         course_name= data['course_name']
         # 
         course = Course.objects.filter(title= course_name).first()
-        class_data = Class.objects.filter(course= course).first()
-        
+        class_data = Class.objects.filter(course= course)
+        classes = []
         if class_data is not None:
-            return JsonResponse({"course_title": course.title, 
-                                 "class_title": class_data.title ,
-                                 "class_day": class_data.claas_day,
-                                 "start_time": class_data.start_time,
-                                 "end_time": class_data.end_time,
-                                 "lecturer": "{} {}".format(class_data.lecturer.user.first_name, class_data.lecturer.user.last_name)
+            for class_info in class_data:
+                classes.append({"course_title": course.title, 
+                                 "class_title": class_info.title ,
+                                 "class_day": class_info.claas_day,
+                                 "start_time": class_info.start_time,
+                                 "end_time": class_info.end_time,
+                                 "lecturer": "{} {}".format(class_info.lecturer.user.first_name, class_info.lecturer.user.last_name)
                                  })
+            return JsonResponse(classes,safe=False)
+
         else:
             return JsonResponse({'detail' : "No result found!","error" : True, "data" : None}, status=404)
-
 
 
 def branches(request):

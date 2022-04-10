@@ -73,15 +73,17 @@ class ClassInfoAction(Action):
         # Api call
         data = classInfoApi(course_name=course_name)
             
-        if data is not None:
-            dispatcher.utter_message(text="The class {} for the {} course is on {} starting at {} - til {}, with Ms. {}".format(data['class_title'],
-                                                                                                                               data['course_title'],
-                                                                                                                               data['class_day'] ,
-                                                                                                                               data['start_time'] ,
-                                                                                                                               data['end_time'] ,
-                                                                                                                               data['lecturer']))
+                    
+        if data is not None or data is not []:
+            for class_info in data:
+                dispatcher.utter_message(text="The class {} for the {} course is on {} starting at {} - til {}, with Ms. {}".format(class_info['class_title'],
+                                                                                                                               class_info['course_title'],
+                                                                                                                               class_info['class_day'] ,
+                                                                                                                               class_info['start_time'] ,
+                                                                                                                               class_info['end_time'] ,
+                                                                                                                               class_info['lecturer']))
             return [SlotSet("course_name", None)]
-   
+
         else:
             dispatcher.utter_message(text="Sorry, but i didnt find and results!")         
         return []
